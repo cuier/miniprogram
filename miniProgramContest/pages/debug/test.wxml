@@ -1,0 +1,19 @@
+<view class="container  ">
+   <view class='global-margin-left global-margin-right'> 
+  <radio-group class="radio-group-column" bindchange="radioChange">
+    <label class='radio' wx:for='{{items}}' wx:key='urls'>
+      <radio value="{{item.value}}" checked="{{item.checked}}">{{item.name}}</radio>
+    </label>
+  </radio-group>
+  <text class='font-14 title-area'>{{url}}</text>
+
+  <view wx:if="{{custom}}" class='global-margin-top'>
+    <form bindsubmit='onSaveCustomUrl'>
+      <view class='form-container'>
+        <input name='customUrl' class='form-input' placeholder='请输入自定义地址' placeholder-class='form-input-placeholder' value="{{url}}"></input>
+      </view>
+      <button class='global-margin-top' type='primary' size='default' plain='true' form-type='submit'>保存</button>
+    </form>
+  </view>
+   </view> 
+</view>

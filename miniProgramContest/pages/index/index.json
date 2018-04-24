@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "答题",
+  "navigationBarBackgroundColor": "#3e6ccf",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "circle": "/components/circle/circle"
+  }
+}

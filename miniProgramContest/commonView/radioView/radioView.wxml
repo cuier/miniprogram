@@ -1,0 +1,13 @@
+<template name='publicRadio'>
+  <view class='div-line global-margin-left' />
+  <view class='form-container'>
+    <text class='form-title'>{{title}}</text>
+    <view class='form-input'>
+      <radio-group name='{{id}}' id='{{id}}' class='radio-label global-margin-right' bindchange='bindRadio'>
+        <label wx:for='{{radioArr}}' wx:key='radio' class='radio-label'>
+          <radio disabled='{{item.disabled}}' value='{{item.value}}' checked='{{item.checked}}' class='radio-self' />{{item.title}}
+        </label>
+      </radio-group>
+    </view>
+  </view>
+</template>

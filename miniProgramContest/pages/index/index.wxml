@@ -1,0 +1,35 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- <view class='biaoti'> -->
+     <view class="biaoti">
+      <view class='biaoti-nOfItems' style='width:{{0.33*width}}px;margin-left:{{0.33*width}}px'> 第{{1}}题</view>
+      <circle id='circle' bg='circle_bg' draw='circle_draw' bind:runEvent="_runEvent">
+    <view class="circle_text" bindtap="changeTime">
+      <text class='circle_time'> {{time}} s</text>
+    </view>
+  </circle>
+    </view> 
+    <!-- <canvas class='myCanvas' style='width:{{width}};position:fixed' canvas-id="canvasArc"></canvas>
+    <view class="cc">3</view> -->
+    
+   
+  <!-- </view> -->
+  <view>
+    <view class="title">{{postList[idx].name}}</view>
+    <view hidden="{{ny}}">{{postList[idx].daan}}</view>
+  </view>
+  <scroll-view>
+    <!-- <block wx:for='{{postList[idx].content}}' wx:key='postlist'>
+      <view id='{{index}}' bindtap="btnOpClick" style="background-color: {{[`bc${index}`]}};" class='form-container'>{{item}}</view>
+    </block> -->
+    <view class="form-container" id='0' bindtap="btnOpClick" style="background-color: {{bc0}};">{{postList[idx].content[0]}}</view>
+
+    <view class="form-container" id='1' bindtap="btnOpClick" style="background-color: {{bc1}};">{{postList[idx].content[1]}}</view>
+
+    <view class="form-container" id='2' bindtap="btnOpClick" style="background-color: {{bc2}};">{{postList[idx].content[2]}}</view>
+
+    <view class="form-container" id='3' bindtap="btnOpClick" style="background-color: {{bc3}};">{{postList[idx].content[3]}}</view>
+
+  </scroll-view>
+  <text class="global-bottom-tip">积分：每答对一题积2分，目前得分{{defen}}</text>
+</view>
