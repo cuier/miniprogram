@@ -1,0 +1,18 @@
+.progress_box{
+  position: relative;
+  width:100px;
+  height: 100px;  
+  display: flex;  
+  align-items: center;
+  justify-content: center;
+  /* background-color: #eee; */
+}
+.progress_bg{
+  position: absolute;
+  width:100px;
+  height: 100px; 
+}
+.progress_canvas{ 
+  width:100px;
+  height: 100px; 
+} 

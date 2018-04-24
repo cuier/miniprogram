@@ -1,11 +1,11 @@
 const circleProgress = {
-  drawCircleBg: function (id, x, w) {
+  drawCircleBg ( x, w) {
     // 设置圆环外面盒子大小 宽高都等于圆环直径
-    this.setData({
-      size: 2 * x   // 更新属性和数据的方法与更新页面数据的方法类似
-    });
+    // this.setData({
+    //   size: 2 * x   // 更新属性和数据的方法与更新页面数据的方法类似
+    // });
     // 使用 wx.createContext 获取绘图上下文 ctx  绘制背景圆环
-    var ctx = wx.createCanvasContext(id)
+    var ctx = wx.createCanvasContext('canvasProgressbg')
     ctx.setLineWidth(10);
     ctx.setStrokeStyle('white');
     ctx.setLineCap('round')
@@ -15,9 +15,9 @@ const circleProgress = {
     ctx.stroke();//对当前路径进行描边
     ctx.draw();
   },
-  drawCircle: function (id, x, w, step) {
+  drawCircle: function ( x, w, step) {
     // 使用 wx.createContext 获取绘图上下文 context  绘制彩色进度条圆环
-    var context = wx.createCanvasContext(id);
+    var context = wx.createCanvasContext('canvasProgress');
     // 设置渐变
     // var gradient = context.createLinearGradient(2 * x, x, 0);
     // gradient.addColorStop("0", "#2661DD");
@@ -31,7 +31,8 @@ const circleProgress = {
     context.arc(x, x, x - w, -Math.PI / 2, step * Math.PI - Math.PI / 2, false);
     context.stroke();//对当前路径进行描边
     context.setFontSize(25);
-    context.fillText(this.data.time, x - 7, 40);
+    context.setFillStyle('white')
+    context.fillText(this.data.time, x+1-w, x+w);
     context.draw()
   },
 
@@ -41,8 +42,7 @@ const circleProgress = {
     this.stepTimer = setInterval(() => {
       if (this.data.num >= 0) {
         this.data.step = this.data.num / n;
-        // 绘制彩色圆环进度条
-        this.circle.drawCircle('circle_draw', 40, 4, this.data.step)
+        
         if ((/(^[1-9]\d*$)/.test(this.data.num / 10))) {
           // 当时间为整数秒的时候 改变时间
           this.setData({
@@ -55,6 +55,10 @@ const circleProgress = {
           time: 0
         });
       }
+      // 绘制彩色圆环进度条
+      this.drawCircle(45, 10, this.data.step)
     }, 100)
   },
 }
+
+export default circleProgress
