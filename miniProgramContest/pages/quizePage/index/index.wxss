@@ -1,5 +1,5 @@
 /**index.wxss**/
-@import "../../commonView/pickerView/pickerView.wxss";
+/* @import "../../commonView/pickerView/pickerView.wxss"; */
 
 .biaoti{
   display: flex;

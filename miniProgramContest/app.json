@@ -1,39 +1,16 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/login/login",
-    "pages/debug/test"
+    "pages/homePage",
+    "pages/quizePage/index/index",
+    "pages/debug/test",
+    "pages/sotrePage/sotrePage",
+    "pages/personalPage/personalPage",
+    "pages/articlePage/articlePage"
   ],
-  "tabBar":{
-    "color": "#7A7E83",
-    "selectedColor": "#fa454c",
-    "borderStyle": "black",
-    "backgroundColor": "#fff",
-    "list":[
-      {
-        "pagePath":"pages/index/index",
-        "text":"tabbar1",
-        "iconPath":"icons/cart.png",
-        "selectedIconPath":"icons/cart@selected.png"
-      },
-      {
-        "pagePath": "pages/index/index",
-        "text": "tabbar1",
-        "iconPath": "icons/category.png",
-        "selectedIconPath": "icons/category@selected.png"
-      },
-      {
-        "pagePath": "pages/index/index",
-        "text": "tabbar1",
-        "iconPath": "icons/category.png",
-        "selectedIconPath": "icons/category@selected.png"
-      }
-    ]
-  },
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "小程序模板",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#3e6ccf",
+    "navigationBarTitleText": "健康护卫队",
+    "navigationBarTextStyle": "light"
   }
 }

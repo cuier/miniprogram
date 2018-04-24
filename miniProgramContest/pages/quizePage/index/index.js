@@ -2,9 +2,9 @@
  * created by cuilijuan on 2018/1/25
  * 初始版本 首页
  */
-import debugUtil from '../../utils/debugUtil'
-import *as sensorUtil from '../../utils/sensorUtil'
-import *as constants from '../../code/constants.js'
+import debugUtil from '../../../utils/debugUtil'
+import *as sensorUtil from '../../../utils/sensorUtil'
+import *as constants from '../../../code/constants.js'
 var local_database = [{
   "name": "‘收取关山五十州’上句是什么？",
   "daan": "0",

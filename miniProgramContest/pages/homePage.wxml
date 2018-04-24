@@ -1,0 +1,7 @@
+<view class="form-container" id='0' bindtap="btnOpClick" style="background-color: {{bc0}};">知识大作战</view>
+
+    <view class="form-container" id='1' bindtap="btnOpClick" style="background-color: {{bc1}};">商城</view>
+
+    <view class="form-container" id='2' bindtap="btnOpClick" style="background-color: {{bc2}};">提升</view>
+
+    <view class="form-container" id='3' bindtap="btnOpClick" style="background-color: {{bc3}};">我的</view>
