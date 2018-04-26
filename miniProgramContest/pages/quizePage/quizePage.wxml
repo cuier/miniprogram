@@ -1,0 +1,18 @@
+<!--pages/quizePage/quizePage.wxml-->
+<view class="container">
+  <view class='page_section1' catchtap="catchtap">
+    <!-- <view class='title-self'>
+        <view class="list-item-self">{{pickerName}}</view>
+        <view class="div-line-self"  />
+      </view> -->
+    <view class="content-self">
+      <block wx:for="{{contentArr}}" wx:key="contentArr">
+        <view class="item-button" id="{{item.code}}" bindtap='chooseState'>{{item.title}}</view>
+      </block>
+    </view>
+  </view>
+  <view style="display: flex; align-items: center">
+    <text class='tip_content'>一共10题，答对8题\n才能闯关成功</text>
+  </view>
+  <button class="global-submit-btn " loading="{{loading}}">开始闯关</button>
+</view>

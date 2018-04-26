@@ -10,7 +10,8 @@ page {
 
 .container {
   width: 100%;
-  padding-top: 40rpx;
+  padding: 40rpx 30rpx;
+  
 }
 
 .white-background {
@@ -88,13 +89,13 @@ page {
 .global-submit-btn{
   display: flex;
   flex: 1;
-  margin: 80rpx 30rpx 80rpx;
-  height: 84rpx;
+  margin: 10rpx 130rpx;
+  height: 120rpx;
   align-items: center;
   justify-content: center;
   border-radius: 10rpx;
   color: #fff;
-  background-color: #fe5e5e
+  background-color: #30c869
 }
 /**分割线*/
 .div-line{

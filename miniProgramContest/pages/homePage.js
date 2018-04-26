@@ -1,45 +1,30 @@
 // pages/homePage.js
+
+import network from '../http/newNetwork.js'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
-  },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+    this.getUserInfo((data)=>{
+      this.setData({
+        userInfo:data
+      })
+    })
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
   
   },
 
@@ -61,7 +46,7 @@ Page({
     switch (id) {
       case '0':{
         wx.navigateTo({
-          url: '/pages/quizePage/index/index',
+          url: '/pages/quizePage/quizePage',
         })
         break
       }
@@ -83,6 +68,43 @@ Page({
         })
       }
     }
+  },
+
+  getUserInfo(cb){
+    wx.login({
+      success:()=>{
+        wx.getUserInfo({
+          success:(res)=>{
+            typeof cb == 'function' && cb(res.userInfo)
+            //将用户昵称提交到服务器
+            if(!this.onPay){
+              this._updataUserInfo(res.userInfo)
+            }
+          },
+          fail:(res)=>{
+            typeof cb == 'function' && cb({
+              avatarUrl:'/icons/user@default.png'
+            })
+          }
+        })
+      }
+    })
+  },
+
+  //更新用户信息到服务器
+  _updateUserInfo(res){
+    let nickName = res.nickName
+    delete res.avatarUrl;  //将昵称去除
+    delete res.nickName;  //将昵称去除
+    var allParams = {
+      url: 'user/wx_info',
+      data: { nickname: nickName, extend: JSON.stringify(res) },
+      // type: 'post',
+      sCallback: function (data) {
+      }
+    };
+    network.request(allParams);
+
   },
   /**
    * 用户点击右上角分享

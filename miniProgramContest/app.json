@@ -5,7 +5,8 @@
     "pages/debug/test",
     "pages/sotrePage/sotrePage",
     "pages/personalPage/personalPage",
-    "pages/articlePage/articlePage"
+    "pages/articlePage/articlePage",
+    "pages/quizePage/quizePage"
   ],
   "window": {
     "backgroundTextStyle": "light",

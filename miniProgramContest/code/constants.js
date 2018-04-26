@@ -9,6 +9,7 @@ const DEBUG = true;
 
 module.exports = Object.assign({
   debug:DEBUG,//是否为调试模式
+  onPay:true,//是否启用支付
   //---------------------Interfaces---------------
   interfaces: {
     //------------------模块1--------------------
@@ -83,4 +84,16 @@ module.exports = Object.assign({
     INPUT1: "input1",
     INPUT: 'input',
   },
+  //---------------------闯关等级------------------
+  mamiLevel:[
+    { code: 0, title: '实习妈妈' },
+    { code: 1, title: '初级妈妈' },
+    { code: 2, title: '中级妈妈' },
+    { code: 3, title: '称职妈妈' },
+    { code: 4, title: '超级妈妈' },
+    { code: 5, title: '超人妈妈' },
+  ]
+    
+  
+
 }, configCode);
