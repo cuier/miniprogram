@@ -6,7 +6,7 @@ const circleProgress = {
     // });
     // 使用 wx.createContext 获取绘图上下文 ctx  绘制背景圆环
     var ctx = wx.createCanvasContext('canvasProgressbg')
-    ctx.setLineWidth(10);
+    ctx.setLineWidth(8);
     ctx.setStrokeStyle('white');
     ctx.setLineCap('round')
     ctx.beginPath();//开始一个新的路径
@@ -23,15 +23,15 @@ const circleProgress = {
     // gradient.addColorStop("0", "#2661DD");
     // gradient.addColorStop("0.5", "#40ED94");
     // gradient.addColorStop("1.0", "#5956CC");
-    context.setLineWidth(8);
-    context.setStrokeStyle("#e7672e");
+    context.setLineWidth(6);
+    context.setStrokeStyle('red');
     context.setLineCap('butt')
     context.beginPath();//开始一个新的路径
     // step 从0到2为一周
     context.arc(x, x, x - w, -Math.PI / 2, step * Math.PI - Math.PI / 2, false);
     context.stroke();//对当前路径进行描边
     context.setFontSize(25);
-    context.setFillStyle('white')
+    context.setFillStyle('red')
     context.fillText(this.data.time, x+1-w, x+w);
     context.draw()
   },
@@ -56,7 +56,7 @@ const circleProgress = {
         });
       }
       // 绘制彩色圆环进度条
-      this.drawCircle(45, 10, this.data.step)
+      this.drawCircle(35, 10, this.data.step)
     }, 100)
   },
 }

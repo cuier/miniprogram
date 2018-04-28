@@ -1,27 +1,69 @@
 /**index.wxss**/
  @import "../../../commonView/circleProgress/circleProgress"; 
 
+.bg{
+  position: fixed;
+  border-radius: 40rpx;
+  border-width: thick;
+  border-color: black;
+  border-style: solid;
+  height: 1060rpx;
+  width: 600rpx;
+  background-color: #FBEFE0;
+}
+.bg1{
+  margin: 50rpx 0rpx
+}
+.bg2{
+  margin: 20rpx 40rpx;
+}
+.bg3{
+  margin: -10rpx 80rpx;
+}
 .biaoti{
   display: flex;
   flex-direction: row;
 }
-
+.image0{
+  width:110rpx;
+  height:80rpx;
+  position:absolute;
+  margin-top: 90rpx;
+  flex: 1;
+  z-index: 100;
+  margin-left: -20rpx
+}
 .biaoti-nOfItems{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #30c869;
-  height: 40px;
-  color: white;
+  height: 100rpx;
+  width: 300rpx;
+  margin-left:150rpx;
+  background-repeat:no-repeat;
 }
 .title{
+  /* display: flex; */
+  margin: 40rpx 40rpx;
+}
+.form-container {
+  height: 100rpx;
   display: flex;
-  margin: 40rpx 60rpx;
-  color: white
+  padding-left: 30rpx;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 30rpx;
+  margin: 10rpx 30rpx;
+  background-repeat:no-repeat;
 }
 
+.abcd{
+  margin: -10rpx 40rpx;
+  height: 80rpx;
+  width: 70rpx
+}
 /*圆环倒计时*/
-.circle_text{ 
+/* .circle_text{ 
   position: absolute;  
   left: 50%;
   top: 50%; 
@@ -31,9 +73,9 @@
   color: #fff;
   font-size: 32rpx;
   padding-left: 16rpx; 
-} 
+}  */
 /*圆环进度条文字*/
-.circle_info{
+/* .circle_info{
   position: absolute; 
   width: 100%;
   left: 50%;
@@ -54,4 +96,4 @@
   color: #fff;
   font-size: 36rpx; 
   letter-spacing: 2rpx;
-}
+} */

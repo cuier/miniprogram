@@ -3,7 +3,8 @@
 page {
   display: block;
   min-height: 100%;
-  background-color: #5D72F3;
+   background-color: #5D72F3; 
+  background-image: url('http://p3zdca1vy.bkt.clouddn.com/1.png')
 }
 
 /*页面内边距*/
@@ -113,17 +114,6 @@ ex.
     </view>
  */
 
-.form-container {
-  height: 120rpx;
-  display: flex;
-  padding-left: 30rpx;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  border-radius: 30rpx;
-  margin: 40rpx 60rpx;
-  color: #3e6ccf
-}
 
 .form-title{
   white-space: nowrap;

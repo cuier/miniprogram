@@ -105,7 +105,7 @@ Page(Object.assign({
       // 获得circle组件
       // this.circle = this.selectComponent("#circle");
       // 绘制背景圆环
-      circleProgress.drawCircleBg( 45, 10)
+      circleProgress.drawCircleBg( 35, 10)
       // 绘制彩色圆环
       this.stepInterval()
       

@@ -2,28 +2,33 @@
 <import src='/commonView/circleProgress/circleProgress.wxml' />
 
 <view class="container">
-  <view class='title'>
-  已答对: {{0}}
+<image class='image0' src='/icons/quize/beautiful.png'></image>
+  <view class='bg bg1' style='background-image: url("/icons/background1.png");'/>
+  <view class='bg bg2' style='background-image: url("/icons/background1.png");'>
   </view>
-  <view class="biaoti">
-    <view class='biaoti-nOfItems' style='width:{{0.33*width}}px;margin-left:{{0.33*width}}px;'> 第{{1}}题</view>
-    <view style="padding-left:30px;margin-top:-20px">
+  <view class='bg bg3' style='background-image: url("/icons/background1.png");'>
+    <view class='title'>已答对: {{0}}</view>
+    <view style="padding-left:400rpx;margin-top:-60px">
       <template is='circleProgress' data='{{...circleProgress}}' />
     </view>
-  </view>
-  <view>
+    <!-- <view class="biaoti"> -->
+      <view class='biaoti-nOfItems' style='background-image: url("/icons/quize/title.png")'> 第{{1}}题</view>
+    <!-- </view> -->
+    <view>
     <view class="title">{{postList[idx].name}}</view>
     <view hidden="{{ny}}">{{postList[idx].daan}}</view>
   </view>
   <scroll-view>
-    <view class="form-container" id='0' bindtap="btnOpClick" style="background-color: {{bc0}};">{{postList[idx].content[0]}}</view>
+    <view class="form-container" id='0' bindtap="btnOpClick" style='background-image: url("/icons/quize/abcd.png")'>
+    <image class='abcd' src='/icons/quize/a.png'></image>
+    {{postList[idx].content[0]}}</view>
 
-    <view class="form-container" id='1' bindtap="btnOpClick" style="background-color: {{bc1}};">{{postList[idx].content[1]}}</view>
+    <view class="form-container" id='1' bindtap="btnOpClick" style='background-image: url("/icons/quize/abcd.png")'>{{postList[idx].content[1]}}</view>
 
-    <view class="form-container" id='2' bindtap="btnOpClick" style="background-color: {{bc2}};">{{postList[idx].content[2]}}</view>
+    <view class="form-container" id='2' bindtap="btnOpClick" style='background-image: url("/icons/quize/abcd.png")'>{{postList[idx].content[2]}}</view>
 
-    <view class="form-container" id='3' bindtap="btnOpClick" style="background-color: {{bc3}};">{{postList[idx].content[3]}}</view>
+    <view class="form-container" id='3' bindtap="btnOpClick" style='background-image: url("/icons/quize/abcd.png")'>{{postList[idx].content[3]}}</view>
 
   </scroll-view>
-  <text class="global-bottom-tip">积分：每答对一题积2分，目前得分{{defen}}</text>
+  </view>
 </view>
