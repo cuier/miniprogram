@@ -3,7 +3,7 @@
 page {
   display: block;
   min-height: 100%;
-  background-color: #3e6ccf;
+  background-color: #5D72F3;
 }
 
 /*页面内边距*/

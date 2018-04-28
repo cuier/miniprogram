@@ -1,40 +1,41 @@
 <view class='container'>
-  <view class="my-header">
+  <view class="my-header" bindtap='gotoMyPage'>
     <image class='image-user' src="{{userInfo.avatarUrl}}"></image>
     <view>
       <text class="name">{{userInfo.nickName}}</text>
       <text class="name">等级：{{'暂无'}}</text>
     </view>
     <image class='image-self' src='/icons/gold-coin.png'></image>
-    <text>1200</text>
+    <text style='margin-bottom: 60rpx'>1200</text>
   </view>
   <view class='content'>
-    <view class='section1 border' style='background-image: url("/icons/background1.png"); '>健康常识闯关
-      <image style='width:125px;height:140px;padding-bottom:90rpx;margin-left:60rpx' src='/icons/trophy.png'></image>
+    <view class='section1 border' style='background-image: url("/icons/background1.png"); ' bindtap='gotoQuiz'>
+      <text style='margin-left:60rpx'>健康常识闯关</text>
+      <image style='width:125px;height:150px;padding-bottom:130rpx;margin-left:40rpx' src='/icons/trophy.png'></image>
     </view>
     <view class='section2'>
-      <view class='section2-1 border'>超人妈妈
-      <image src='/icons/rocket.png' style='width:170rpx;height:180rpx;margin-top:30rpx'></image>
+      <view class='section2-1 border' bindtap='gotoQuiz'>超人妈妈
+        <image src='/icons/rocket.png' style='width:170rpx;height:180rpx;margin-top:30rpx'></image>
       </view>
       <view class='section2-2'>
-        <view class='section2-2-1 border'> 
-        <text>我要\n变瘦</text>
-        <image src='/icons/skirt.png' style='width:140rpx;height:160rpx;margin-left:30rpx'></image>
+        <view class='section2-2-1 border' bindtap='gotoQuiz'>
+          <text style='padding-left:30rpx'>我要\n变瘦</text>
+          <image src='/icons/skirt.png' style='width:140rpx;height:160rpx;margin-left:30rpx'></image>
         </view>
-        <view class='section2-2-1 border'> 
-         <text>贴心\n女神</text>
-         <image src='/icons/goddess.png' style='width:140rpx;height:180rpx;margin-left:30rpx'></image>
-         </view>
+        <view class='section2-2-1 border' bindtap='gotoQuiz'>
+          <text>贴心\n女神</text>
+          <image src='/icons/goddess.png' style='width:140rpx;height:200rpx;margin-left:30rpx'></image>
+        </view>
       </view>
     </view>
-    <view class='border section3'>
-     <image src='/icons/Triangle.png' style='width:100rpx;height:120rpx;margin-right:30rpx'></image>
-    知识提升
-    <image src='/icons/redbook.png' style='width:200rpx;height:210rpx;margin-left:30rpx;margin-top:10rpx'></image>
+    <view class='border section3' bindtap='gotoArticle'>
+      <image src='/icons/Triangle.png' style='width:100rpx;height:120rpx;'></image>
+      <text>知 识 提 升</text>
+      <image src='/icons/redbook.png' style='width:160rpx;height:170rpx;margin-top:10rpx'></image>
     </view>
     <view class='section2'>
-      <view class='border section4 section4-1'>商城</view>
-      <view class='border section4 section4-2'>安佳健康理念</view>
+      <view class='border section4 section4-1' bindtap='gotoStore'>商城</view>
+      <view class='border section4 section4-2' bindtap='goto'>安佳健康理念</view>
     </view>
   </view>
 

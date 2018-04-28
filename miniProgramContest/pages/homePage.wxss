@@ -21,6 +21,7 @@
   margin-left: 120rpx;
   height: 60rpx;
   width: 60rpx;
+  margin-bottom: 60rpx
 }
 
 .my-header view {
@@ -53,7 +54,7 @@
   margin-top: 30rpx;
   margin-right: 60rpx;
   height: 252rpx;
-  background-color: blanchedalmond;
+  background-color: #FBEFE0;
   color: black !important;
 }
 
@@ -87,6 +88,10 @@
 }
 
 .section3{
+  display: flex;
+  /* align-content: space-between; */
+  justify-content: flex-end;
+  flex: 1;
   margin-top: 30rpx;
   margin-right: 60rpx;
   height: 144rpx;

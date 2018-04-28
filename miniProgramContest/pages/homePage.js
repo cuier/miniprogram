@@ -41,6 +41,26 @@ Page({
   onReachBottom: function () {
   
   },
+  gotoMyPage:function(e){
+    wx.navigateTo({
+      url: '/pages/personalPage/personalPage',
+    })
+  },
+  gotoQuiz:function(e){
+    wx.navigateTo({
+      url: '/pages/quizePage/quizePage',
+    })
+  },
+  gotoArticle:function(){
+    wx.navigateTo({
+      url: '/pages/articlePage/articlePage',
+    })
+  },
+  gotoStore:function(){
+    wx.navigateTo({
+      url: '/pages/sotrePage/sotrePage',
+    })
+  },
   btnOpClick:function(e){
     let id = e.currentTarget.id
     switch (id) {
