@@ -1,5 +1,5 @@
 /* pages/quizePage/quizePage.wxss */
-
+@import "../../components/alertSheets/alertSheets.wxss";
 .page_section1 {
   margin: 0rpx 60rpx 60rpx 0rpx;
   background-color: #FBEFE0;
@@ -17,6 +17,7 @@
   display: flex;
   justify-content: center;  
   margin:  38rpx 20rpx 20rpx 20rpx;
+  background-repeat: no-repeat;
 }
 
 .content-self{

@@ -1,0 +1,13 @@
+<!--弹窗-->
+<template name="alertSheets">
+  <view class="modal-mask" bindtap="{{onCancel}}" catchtouchmove="preventTouchMove" wx:if="{{visible}}"></view>
+  <view class="modal-dialog" style='background-image: url("/icons/quize/background.png")' scroll-y wx:if="{{visible}}">
+    <view class='content-area'>
+      <textarea class="alert_textArea" auto-height="true" disabled="false" fixed="true">{{gameExplain}}</textarea>
+      <image class='giftImage' src='/icons/quize/gift.png'></image>
+      <image class='closeImg' src='/icons/quize/close.png'></image>
+    </view>
+    
+
+  </view>
+</template>

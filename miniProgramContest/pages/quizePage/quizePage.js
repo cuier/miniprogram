@@ -1,5 +1,6 @@
 // pages/quizePage/quizePage.js
 import * as constants from '../../code/constants.js'
+import {$alertSheets} from '../../components/CompRouter.js'
 Page({
 
   /**
@@ -46,6 +47,16 @@ Page({
     })
   },
   gameExplain:function(e){
-
+    $alertSheets.showalertSheets({
+      gameExplain:'1.金币还可以在商城抵扣现金\n2.当获得超人妈妈等级和\n10000金币以后可在商城\n免费兑换如下礼物',
+      onConfirm: (e) => {
+        //提交数据
+        //校验数据
+        // formValues.binBankId = response.branceName.binBankId
+        // this._postStoreInfo(formValues);
+      },
+       onCancel: (e) => {
+      },
+    })
   }
 })

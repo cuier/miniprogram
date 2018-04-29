@@ -1,8 +1,9 @@
 {
-  "pages": ["pages/homePage",
-    "pages/quizePage/index/index",
+  "pages": [
     "pages/quizePage/quizePage",
+    "pages/quizePage/index/index",
     
+    "pages/homePage",
     "pages/debug/test",
     "pages/sotrePage/sotrePage",
     "pages/personalPage/personalPage",

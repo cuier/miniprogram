@@ -1,4 +1,0 @@
-<template name='popupView'>
-  <view class="modal-mask" bindtap="{{onCancel}}" catchtouchmove="preventTouchMove" wx:if="{{visible}}"></view>
-  
-</template>
