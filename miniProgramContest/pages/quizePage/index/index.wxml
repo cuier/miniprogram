@@ -7,8 +7,8 @@
   <view class='bg bg2' style='background-image: url("/icons/background1.png");'>
   </view>
   <view class='bg bg3' style='background-image: url("/icons/background1.png");'>
-    <view class='title'>已答对: {{0}}</view>
-    <view style="padding-left:400rpx;margin-top:-60px">
+    <view style='margin:30rpx 40rpx 0'>已答对: {{0}}</view>
+    <view style="padding-left:400rpx;margin-top:-40px">
       <template is='circleProgress' data='{{...circleProgress}}' />
     </view>
     <!-- <view class="biaoti"> -->
@@ -21,14 +21,26 @@
   <scroll-view>
     <view class="form-container" id='0' bindtap="btnOpClick" style='background-image: url("/icons/quize/abcd.png")'>
     <image class='abcd' src='/icons/quize/a.png'></image>
-    {{postList[idx].content[0]}}</view>
+    <view class='contents'>{{postList[idx].content[0]}}</view>
+    </view>
 
-    <view class="form-container" id='1' bindtap="btnOpClick" style='background-image: url("/icons/quize/abcd.png")'>{{postList[idx].content[1]}}</view>
+    <view class="form-container" id='1' bindtap="btnOpClick" style='background-image: url("/icons/quize/abcd.png")'>
+    <image class='abcd' src='/icons/quize/b.png'></image>
+    <view class='contents'>{{postList[idx].content[1]}}</view>
+    </view>
 
-    <view class="form-container" id='2' bindtap="btnOpClick" style='background-image: url("/icons/quize/abcd.png")'>{{postList[idx].content[2]}}</view>
+    <view class="form-container" id='2' bindtap="btnOpClick" style='background-image: url("/icons/quize/abcd.png")'>
+    <image class='abcd' src='/icons/quize/c.png'></image>
+    <view class='contents'>{{postList[idx].content[2]}}</view>
+    </view>
 
-    <view class="form-container" id='3' bindtap="btnOpClick" style='background-image: url("/icons/quize/abcd.png")'>{{postList[idx].content[3]}}</view>
+    <view class="form-container" id='3' bindtap="btnOpClick" style='background-image: url("/icons/quize/abcd.png")'>
+    <image class='abcd' src='/icons/quize/d.png'></image>
+    <view class='contents'>{{postList[idx].content[3]}}</view>
+    </view>
 
   </scroll-view>
+  <view class='footer-self' style='background-image: url("/icons/homePage.png");'>首页
+  </view>
   </view>
 </view>

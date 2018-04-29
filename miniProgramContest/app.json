@@ -1,8 +1,7 @@
 {
-  "pages": [
+  "pages": ["pages/homePage",
     "pages/quizePage/index/index",
     "pages/quizePage/quizePage",
-    "pages/homePage",
     
     "pages/debug/test",
     "pages/sotrePage/sotrePage",
