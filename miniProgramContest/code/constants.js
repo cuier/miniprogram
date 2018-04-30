@@ -86,12 +86,12 @@ module.exports = Object.assign({
   },
   //---------------------闯关等级------------------
   mamiLevel:[
-    { code: 0, title: '实习妈妈' },
-    { code: 1, title: '初级妈妈' },
-    { code: 2, title: '中级妈妈' },
-    { code: 3, title: '称职妈妈' },
-    { code: 4, title: '超级妈妈' },
-    { code: 5, title: '超人妈妈' },
+    { code: 1, title: '实习妈妈', locked: 0 },
+    { code: 2, title: '初级妈妈', locked: 0},
+    { code: 3, title: '中级妈妈', locked: 0},
+    { code: 4, title: '称职妈妈', locked: 0},
+    { code: 5, title: '超级妈妈', locked: 1},
+    { code: 6, title: '超人妈妈', locked: 1},
   ]
     
   

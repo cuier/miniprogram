@@ -37,27 +37,50 @@ const circleProgress = {
   },
 
   stepInterval: function () {
-    // 设置倒计时 定时器
-    var n = this.data.num / 2
-    this.stepTimer = setInterval(() => {
-      if (this.data.num >= 0) {
-        this.data.step = this.data.num / n;
-        
-        if ((/(^[1-9]\d*$)/.test(this.data.num / 10))) {
-          // 当时间为整数秒的时候 改变时间
+    // if (!this.data.stopInterval){
+      // 设置倒计时 定时器
+      var n = this.data.num / 2
+      this.stepTimer = setInterval(() => {
+        if (this.data.num >= 0) {
+          this.data.step = this.data.num / n;
+
+          if ((/(^[1-9]\d*$)/.test(this.data.num / 10)) && !this.data.stopInterval) {
+            // 当时间为整数秒的时候 改变时间
+            this.setData({
+              time: this.data.num / 10,
+              className: 'weui-animate-fade-in'
+            });
+          }
+          this.data.num--;
+        } else if ((this.data.idx < this.data.postList.length - 1) && (this.data.idx - this.data.rightNum < 1)){
           this.setData({
-            time: this.data.num / 10
+            time: 0,
+            num: 100,
+            idx: this.data.idx + 1,
+            className: 'weui-animate-fade-out'
           });
+        }else{
+          this.setData({
+            time:0
+          })
+          wx.showModal({
+            title: 'sorry',
+            content: '真遗憾，闯关失败，请再接再厉',
+            success:(res)=>{
+              wx.navigateBack({
+                delta:2
+              })
+            }
+          })
         }
-        this.data.num--;
-      } else {
-        this.setData({
-          time: 0
-        });
-      }
-      // 绘制彩色圆环进度条
-      this.drawCircle(35, 10, this.data.step)
-    }, 100)
+        // 绘制彩色圆环进度条
+        if (!this.data.stopInterval){
+          this.drawCircle(35, 10, this.data.step)
+        }
+        
+      }, 100)
+    // }
+    
   },
 }
 

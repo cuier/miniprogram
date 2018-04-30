@@ -1,6 +1,7 @@
 /**index.wxss**/
  @import "../../../commonView/circleProgress/circleProgress"; 
-
+ @import '../../../commonView/animate.wxss';
+ 
 .bg{
   position: fixed;
   border-radius: 40rpx;
@@ -67,7 +68,7 @@
 height: 100rpx;
 display: flex;
 justify-content: center;
-width: 514rpx;
+width: 400rpx;
 align-items: center;
 }
 

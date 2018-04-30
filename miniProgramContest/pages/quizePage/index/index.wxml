@@ -2,45 +2,52 @@
 <import src='/commonView/circleProgress/circleProgress.wxml' />
 
 <view class="container">
-<image class='image0' src='/icons/quize/beautiful.png'></image>
-  <view class='bg bg1' style='background-image: url("/icons/background1.png");'/>
+  <image class='image0' src='/icons/quize/beautiful.png'></image>
+  <view class='bg bg1' style='background-image: url("/icons/background1.png");' />
   <view class='bg bg2' style='background-image: url("/icons/background1.png");'>
   </view>
   <view class='bg bg3' style='background-image: url("/icons/background1.png");'>
-    <view style='margin:30rpx 40rpx 0'>已答对: {{0}}</view>
+    <view style='margin:30rpx 40rpx 0'>已答对: {{rightNum}}</view>
     <view style="padding-left:400rpx;margin-top:-40px">
       <template is='circleProgress' data='{{...circleProgress}}' />
     </view>
-    <!-- <view class="biaoti"> -->
-      <view class='biaoti-nOfItems' style='background-image: url("/icons/quize/title.png")'> 第{{1}}题</view>
-    <!-- </view> -->
-    <view>
-    <view class="title">{{postList[idx].name}}</view>
-    <view hidden="{{ny}}">{{postList[idx].daan}}</view>
-  </view>
-  <scroll-view>
-    <view class="form-container" id='0' bindtap="btnOpClick" style='background-image: url("/icons/quize/abcd.png")'>
-    <image class='abcd' src='/icons/quize/a.png'></image>
-    <view class='contents'>{{postList[idx].content[0]}}</view>
-    </view>
+    <view class='{{className}}'>
+      <view class='biaoti-nOfItems ' style='background-image: url("/icons/quize/title.png")'> 第{{idx+1}}题</view>
+      <view>
+        <view class="title">{{postList[idx].name}}</view>
+      </view>
+      <scroll-view>
+        <block wx:for='{{postList[idx].content}}' wx:key='content'>
+          <view class="form-container" id='{{index}}' bindtap="btnOpClick" style='background-image: url("/icons/quize/abcd.png")'>
+            <image class='abcd' src='{{"/icons/quize/pic"+index+".png"}}'></image>
+            <view class='contents'>{{postList[idx].content[index]}}</view>
+             <image wx:if='{{isResult&&index==postList[idx].daan}}' style='width:60rpx;height:60rpx;margin-left:-60rpx' src='/icons/quize/right.png'></image> 
+             <image wx:elif='{{isResult&&index==select}}' style='width:60rpx;height:60rpx;margin-left:-60rpx' src='/icons/quize/wrong.png'></image>
+          </view>
+        </block>
+        <!-- <view class="form-container" id='0' bindtap="btnOpClick" style='background-image: url("/icons/quize/abcd.png")'>
+          <image class='abcd' src='/icons/quize/a.png'></image>
+          <view class='contents'>{{postList[idx].content[0]}}</view>
+        </view>
 
-    <view class="form-container" id='1' bindtap="btnOpClick" style='background-image: url("/icons/quize/abcd.png")'>
-    <image class='abcd' src='/icons/quize/b.png'></image>
-    <view class='contents'>{{postList[idx].content[1]}}</view>
-    </view>
+        <view class="form-container" id='1' bindtap="btnOpClick" style='background-image: url("/icons/quize/abcd.png")'>
+          <image class='abcd' src='/icons/quize/b.png'></image>
+          <view class='contents'>{{postList[idx].content[1]}}</view>
+        </view>
 
-    <view class="form-container" id='2' bindtap="btnOpClick" style='background-image: url("/icons/quize/abcd.png")'>
-    <image class='abcd' src='/icons/quize/c.png'></image>
-    <view class='contents'>{{postList[idx].content[2]}}</view>
-    </view>
+        <view class="form-container" id='2' bindtap="btnOpClick" style='background-image: url("/icons/quize/abcd.png")'>
+          <image class='abcd' src='/icons/quize/c.png'></image>
+          <view class='contents'>{{postList[idx].content[2]}}</view>
+        </view>
 
-    <view class="form-container" id='3' bindtap="btnOpClick" style='background-image: url("/icons/quize/abcd.png")'>
-    <image class='abcd' src='/icons/quize/d.png'></image>
-    <view class='contents'>{{postList[idx].content[3]}}</view>
-    </view>
+        <view class="form-container" id='3' bindtap="btnOpClick" style='background-image: url("/icons/quize/abcd.png")'>
+          <image class='abcd' src='/icons/quize/d.png'></image>
+          <view class='contents'>{{postList[idx].content[3]}}</view>
+        </view> -->
 
-  </scroll-view>
-  <view class='footer-self' style='background-image: url("/icons/homePage.png");'>首页
-  </view>
+      </scroll-view>
+    </view>
+    <view class='footer-self' style='background-image: url("/icons/homePage.png");'>首页
+    </view>
   </view>
 </view>

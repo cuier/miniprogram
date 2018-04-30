@@ -4,8 +4,9 @@
   <view class='page_section1' style='background-image: url("/icons/background1.png");height: 524rpx; ' catchtap="catchtap">
     <view class="content-self">
       <block wx:for="{{contentArr}}" wx:key="contentArr">
-        <view class="item-button" style='background-image: url("/icons/background-class.png");' id="{{item.code}}" bindtap='chooseState'>
-          <text style='margin-top:120rpx'>{{item.title}}</text>
+        <view class="item-button" style='background-image: url({{item.locked?"/icons/background-class.png":"/icons/deblocking.png"}});' id="{{item.code}}" bindtap='chooseState'>
+          <text wx:if='{{!item.locked}}' >{{item.code}}</text>
+          <text style='padding-bottom:30rpx;margin-top:46rpx'>{{item.title}}</text>
         </view>
       </block>
     </view>
@@ -20,11 +21,11 @@
     <view class='chuangguan' bindtap='gotoQuize' style='background-image: url("/icons/chuangguan.png");background-repeat:no-repeat;'>开始闯关</view>
 
   </view>
-<view class='pageFooter'>
-  <view class='footer-self' style='background-image: url("/icons/homePage.png");width:160rpx;margin-left:-30rpx'>首页
+  <view class='pageFooter'>
+    <view class='footer-self' style='background-image: url("/icons/homePage.png");width:160rpx;margin-left:-30rpx'>首页
+    </view>
+    <view bindtap='gameExplain' class='footer-self' style='background-image: url("/icons/gameExplain.png");width:234rpx;'>游戏说明
+    </view>
   </view>
-  <view bindtap='gameExplain' class='footer-self' style='background-image: url("/icons/gameExplain.png");width:234rpx;'>游戏说明
-  </view>
-</view>
 </view>
 <template is="alertSheets" data="{{ ...$alertSheets }}" />

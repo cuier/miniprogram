@@ -15,7 +15,9 @@
   font-size: 28rpx;
   color: white; 
   display: flex;
-  justify-content: center;  
+  flex-direction: column;
+  justify-content: flex-end;  
+  align-items: center;
   margin:  38rpx 20rpx 20rpx 20rpx;
   background-repeat: no-repeat;
 }
