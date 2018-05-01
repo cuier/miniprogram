@@ -1,0 +1,16 @@
+<view class="group" style="background-size:{{groupBgWidth}}px;height:{{groupBgHeight}}px">
+  <view class="img" style="width:{{groupBgWidth - 100}}px;height:{{groupBgWidth - 100}}px;">
+    <image src="http://p7z7150ac.bkt.clouddn.com/bitmap.png" style="width:80%;height:80%;"/>
+  </view>
+  <view class="title">
+    商品1：休息休息休息神器
+  </view>
+  <view class="coin">
+    <text>￥100</text>
+  </view>
+  <view class="desc">您尚未达到超人妈妈等级，无法免费兑换</view>
+</view>
+
+<view class="buy">
+  <image src="/icons/sotre/buy.png" style="width:{{buyWidth}}px;height:68px;"  mode="aspectFit"/>
+</view>
