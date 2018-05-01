@@ -10,6 +10,7 @@ Page({
     personalBgHeight: (sysWidth - 30) / 353 * 203,  //个人信息背景高
     themeBgWidth: sysWidth - 30,  //主题宽
     themeBgHieght: 80 / 350 * (sysWidth - 30), //主题高
+    money: 0, //金币
     isSign: false, //是否签到
     isLogin: false, //是否登录
   },
@@ -68,6 +69,18 @@ Page({
         })
       }
     })
+
+    var allParams = {
+        type: 'post',
+        url: 'user/getUserMoney',
+        data: {},
+    };
+    base.request(allParams, (res) => {
+        console.info(res)
+        this.setData({
+          money: res.data.money
+        })
+    });
   },
 
   /**
