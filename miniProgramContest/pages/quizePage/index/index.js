@@ -6,6 +6,7 @@ import debugUtil from '../../../utils/debugUtil'
 import *as sensorUtil from '../../../utils/sensorUtil'
 import *as constants from '../../../code/constants.js'
 import circleProgress from '../../../commonView/circleProgress/circleProgress.js'
+// var wrongNum = 0
 var local_database = [{
   "name": "‘收取关山五十州’上句是什么？",
   "daan": "0",
@@ -66,7 +67,8 @@ Page(Object.assign({
     time: null,
     stepTimer: null,
     rightNum:0,
-    // wrongNum:0
+    wrongNum:0,
+    // stopInterval: true,
   },
   btnOpClick: function (e) {
     var select = e.currentTarget.id;
@@ -74,17 +76,16 @@ Page(Object.assign({
     this.setData({
       select:select,
       isResult: true,
-      stopInterval:true,
-      rightNum: select==jieg?(this.data.rightNum + 1):this.data.rightNum,
-      // wrongNum: select != jieg ? (this.data.wrongNum + 1) : this.data.wrongNum,
+      // stopInterval:true,
     })
-    if (this.data.idx-this.data.rightNum>2){
-      wx.showModal({
-        title: 'sorry',
-        content: '真遗憾，闯关失败，再接再厉',
-      })
+    if(select!=jieg){
+      this.dealWrong()
     }
-    if (this.data.idx < this.data.postList.length - 1) {
+    else if (this.data.idx < this.data.postList.length - 1) {
+      this.setData({
+        stopInterval: true,
+        rightNum:this.data.rightNum+1
+      })
         setTimeout(()=>{
           this.setData({
             num: 100,
@@ -95,6 +96,10 @@ Page(Object.assign({
           })
         },2000)
     }else{
+      this.setData({
+        stopInterval: true,
+        rightNum: this.data.rightNum + 1
+      })
       wx.showModal({
         title: '恭喜',
         content: '恭喜闯关成功',
@@ -131,6 +136,42 @@ Page(Object.assign({
       
     },
 
+    dealWrong(){
+      // clearInterval(this.stepTimer)
+      this.setData({
+        wrongNum:this.data.wrongNum+1,
+        stopInterval: true,
+      })
+
+      if(this.data.wrongNum<2){
+        setTimeout(() => {
+          // this.stepInterval()
+          this.setData({
+            num: 100,
+            idx: this.data.idx + 1,
+            className: 'weui-animate-fade-out',
+            isResult: false,
+            stopInterval: false
+          })
+        }, 2000)
+      }else{
+        clearInterval(this.stepTimer)
+        this.setData({
+          isResult: true,
+          stopInterval: true,
+        })
+        wx.showModal({
+          title: 'sorry',
+          content: '很遗憾，闯关失败，请再接再厉',
+          success:(res)=>{
+            wx.navigateBack({
+              delta:2
+            })
+          }
+        })
+      }
+      
+    },
     quizeFail:function(){
 
     },

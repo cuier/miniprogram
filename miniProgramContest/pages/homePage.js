@@ -98,7 +98,7 @@ Page({
             typeof cb == 'function' && cb(res.userInfo)
             //将用户昵称提交到服务器
             if(!this.onPay){
-              this._updataUserInfo(res.userInfo)
+              this._updateUserInfo(res.userInfo)
             }
           },
           fail:(res)=>{
@@ -123,7 +123,7 @@ Page({
       sCallback: function (data) {
       }
     };
-    network.request(allParams);
+    // network.request(allParams);
 
   },
   /**
