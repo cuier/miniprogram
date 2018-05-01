@@ -1,11 +1,13 @@
-// pages/sotrePage/sotrePage.js
-Page({
+import network from '../../http/newNetwork.js'
+const sysWidth = wx.getSystemInfoSync().windowWidth
+const sysHight = wx.getSystemInfoSync().windowHeight
 
-  /**
-   * 页面的初始数据
-   */
+Page({
   data: {
-  
+    goodsBg: sysHight - 30, //商品背景高
+    itemWidth: (sysWidth - 70) / 3, //商品宽
+    itemHeight: (sysWidth - 70) / 3 * 1.28,  //商品高
+    goods: [,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,],  //商品集合
   },
 
   /**
@@ -16,51 +18,11 @@ Page({
   },
 
   /**
-   * 生命周期函数--监听页面初次渲染完成
+   * 商品点击
    */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  goodsClick: function() {
+    wx.navigateTo({
+      url: '../sotrePage/sotreDetail/sotreDetail',
+    })
   }
 })

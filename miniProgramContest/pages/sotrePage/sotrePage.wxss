@@ -1,1 +1,71 @@
-/* pages/sotrePage/sotrePage.wxss */
+/*返回首页*/
+.pageFooter{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+.footer-self{
+  height:42px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat:no-repeat;
+  position:fixed;
+  bottom:50px;
+  z-index: 100;
+  background-image: url("http://p7z7150ac.bkt.clouddn.com/homePage.png");
+  width:70px;
+  margin-left:-30rpx;
+}
+
+/*商品背景*/
+.goodsBg {
+  background:#fff;
+  margin:15px;
+  border-radius:4px;
+}
+
+/*商品*/
+.goodsItem {
+  display:flex;
+  flex-wrap:wrap;
+  margin: 5px;
+}
+.item {
+  margin:5px;
+  border-radius:10px;
+  text-align: center;
+}
+.free {
+  background:#FF6394;
+}
+.notFree {
+  background:#C563FF;
+}
+
+.item .title {
+  color: #ffffff;
+  font-size: 35rpx;
+  margin: 10rpx 0;
+}
+.item .img {
+  width: 120rpx;
+  height: 120rpx;
+  background: #ffffff;
+  border-radius: 50px;
+  margin: 0 auto;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.item .coin {
+  font-size: 30rpx;
+  padding-top: 20rpx;
+}
+.item .coin text {
+  padding: 1px 10px;
+  background:#fad43b;
+  border-radius:50px;
+}

@@ -4,7 +4,7 @@ page {
   display: block;
   min-height: 100%;
    background-color: #5D72F3; 
-  background-image: url('http://p3zdca1vy.bkt.clouddn.com/1.png')
+  background-image: url('http://p7z7150ac.bkt.clouddn.com/pageBackground.png')
 }
 
 /*页面内边距*/

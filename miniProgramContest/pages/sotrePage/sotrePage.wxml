@@ -1,2 +1,22 @@
-<!--pages/sotrePage/sotrePage.wxml-->
-<text>pages/sotrePage/sotrePage.wxml</text>
+<!-- 返回首页 -->
+<view class='pageFooter'>
+  <navigator class='footer-self' url="../homePage" hover-class="none" open-type="navigateBack">
+    首页
+  </navigator>
+</view>
+
+<view class="goodsBg" style="height:{{goodsBg}}px;">
+  <scroll-view style="height:{{goodsBg}}px;" scroll-y>
+  <view class="goodsItem">
+    <block wx:for="{{goods}}" wx:key="">
+      <view class="item {{index < '5' ? 'free' : 'notFree'}}" style="width:{{itemWidth}}px;Height:{{itemHeight}}px" bindtap="goodsClick">
+        <view class="title">{{index < '5' ? '免费兑换' : '金币抵扣'}} </view>
+        <view class="img"><image src="/icons/sotre/gift.png" style="width:75rpx;height:75rpx;"/></view>
+        <view class="coin">
+          <text>￥100</text>
+        </view>
+      </view>
+    </block>
+    </view>
+  </scroll-view>
+</view>

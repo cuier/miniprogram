@@ -5,6 +5,7 @@
     "pages/quizePage/quizePage",
     "pages/debug/test",
     "pages/sotrePage/sotrePage",
+    "pages/sotrePage/sotreDetail/sotreDetail",
     "pages/personalPage/personalPage",
     "pages/articlePage/articlePage"
     
