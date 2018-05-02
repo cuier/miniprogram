@@ -1,66 +1,13 @@
-// pages/personalPage/personalPage.js
+import network from '../../http/newNetwork.js'
+const sysWidth = wx.getSystemInfoSync().windowWidth
+const sysHight = wx.getSystemInfoSync().windowHeight
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    personalBgWidth: sysWidth - 30, //个人信息背景宽
+    personalBgHeight: (sysWidth - 30) / 353 * 203,  //个人信息背景高
+    themeBgWidth: sysWidth - 30,  //主题宽
+    themeBgHieght: 80 / 350 * (sysWidth - 30), //主题高
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
 })

@@ -1,2 +1,64 @@
-<!--pages/personalPage/personalPage.wxml-->
-<text>pages/personalPage/personalPage.wxml</text>
+<!-- 个人信息 -->
+<view class="personalBg" style="background-size:{{personalBgWidth}}px;height:{{personalBgHeight}}px">
+  <view class="top">
+    <view class="portrait"><image  src="/icons/user@default.png" /></view>
+    <view class="info">
+      <view class="nickname">张三</view>
+      <view class="coin">
+        <image src="/icons/gold-coin.png"></image><text>1200</text>
+      </view>
+    </view>
+    <view class="switch">切换到男生版</view>
+  </view>
+  <view class="bottom">
+    <view class="subject">
+      <view class="num">0</view>
+      <view class="desc">题目收藏</view>
+    </view>
+    <view class="line"><image src="/icons/sLine.png" style="width:4px;height:30px;"/></view>
+    <view class="article">
+      <view class="num">5</view>
+      <view class="desc">文章收藏</view>
+    </view>
+  </view>
+</view>
+
+<!-- 主题 -->
+<view style="width:{{themeBgWidth}}px;padding:0 15px;">
+  <view class="theme" style="height:{{themeBgHieght}}px;margin-top:0;">
+    <view class="li pl20">
+      <view class="title">主题1: 健康常识挑战</view>
+      <view class="grade">等级：暂无</view>
+    </view>
+    <view class="challenge pr20">
+      <view>去挑战</view>
+    </view>
+  </view>
+  <view class="theme" style="height:{{themeBgHieght}}px;">
+    <view class="li pl20">
+      <view class="title">主题2: 超人妈妈</view>
+      <view class="grade">等级：初级妈妈</view>
+    </view>
+    <view class="challenge pr20">
+      <view>查看</view>
+    </view>
+  </view>
+  <view class="theme" style="height:{{themeBgHieght}}px;">
+    <view class="li pl20">
+      <view class="title">主题3: 贴心女神</view>
+      <view class="grade">等级：暂无</view>
+    </view>
+    <view class="challenge pr20">
+      <view>去挑战</view>
+    </view>
+  </view>
+  <view class="theme" style="height:{{themeBgHieght}}px;">
+    <view class="li pl20">
+      <view class="title">主题4: 我要变瘦</view>
+      <view class="grade">等级：暂无</view>
+    </view>
+    <view class="challenge pr20">
+      <view>去挑战</view>
+    </view>
+  </view>
+</view>
