@@ -18,11 +18,6 @@ const circleProgress = {
   drawCircle: function ( x, w, step) {
     // 使用 wx.createContext 获取绘图上下文 context  绘制彩色进度条圆环
     var context = wx.createCanvasContext('canvasProgress');
-    // 设置渐变
-    // var gradient = context.createLinearGradient(2 * x, x, 0);
-    // gradient.addColorStop("0", "#2661DD");
-    // gradient.addColorStop("0.5", "#40ED94");
-    // gradient.addColorStop("1.0", "#5956CC");
     context.setLineWidth(6);
     context.setStrokeStyle('red');
     context.setLineCap('butt')

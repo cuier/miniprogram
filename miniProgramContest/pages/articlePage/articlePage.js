@@ -1,11 +1,27 @@
+
 // pages/articlePage/articlePage.js
+
+
+const $swipertab = [
+  { name: '精选', index: 0, isCurr: true,  },
+  { name: '宝宝', index: 1, isCurr: false, },
+  { name: '瘦身', index: 2, isCurr: false, },
+  { name: '恋爱', index: 3, isCurr: false, },];
+  const articleArr = [
+    {imgUrl:'/icons/article.png',title:'1岁宝宝不能吃什么？',flag:'1',readNum:'800'},
+    { imgUrl: '/icons/article.png', title: '1岁宝宝不能吃什么？', flag: '1', readNum: '800' },
+    { imgUrl: '/icons/article.png', title: '1岁宝宝不能吃什么？', flag: '1', readNum: '800' },
+    { imgUrl: '/icons/article.png', title: '1岁宝宝不能吃什么？', flag: '1', readNum: '800' },
+    { imgUrl: '/icons/article.png', title: '1岁宝宝不能吃什么？', flag: '1', readNum: '800' },
+  ]
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    swipertab: $swipertab,
+    articleArr: articleArr,
   },
 
   /**

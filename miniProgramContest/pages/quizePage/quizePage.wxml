@@ -1,10 +1,10 @@
 <!--pages/quizePage/quizePage.wxml-->
 <import src="/components/alertSheets/alertSheets.wxml" />
 <view class="container">
-  <view class='page_section1' style='background-image: url("/icons/background1.png");height: 524rpx; ' catchtap="catchtap">
+  <view class='page_section1' style='height: 524rpx; ' catchtap="catchtap">
     <view class="content-self">
       <block wx:for="{{contentArr}}" wx:key="contentArr">
-        <view class="item-button" style='background-image: url({{item.locked?"/icons/background-class.png":"/icons/deblocking.png"}});' id="{{item.code}}" bindtap='chooseState'>
+        <view class="item-button" style='background-image: url({{item.locked?"http://weiyinyue.music.sina.com.cn/movie_still/176848_1525182308372.jpg":"http://weiyinyue.music.sina.com.cn/movie_still/176848_1525182309220.jpg"}});' id="{{item.code}}" bindtap='chooseState'>
           <text wx:if='{{!item.locked}}' >{{item.code}}</text>
           <text style='padding-bottom:30rpx;margin-top:46rpx'>{{item.title}}</text>
         </view>
@@ -14,17 +14,17 @@
     <image src='/icons/longline.png' style='height:182rpx;width:54rpx;margin-left:460rpx'></image>
   </view>
 
-  <view class='page_section1' style='background-image: url("/icons/background1.png");height: 362rpx;margin-bottom:30rpx '>
+  <view class='page_section1' style='height: 362rpx;margin-bottom:30rpx '>
     <view style="display: flex; align-items: center">
       <text class='tip_content'>一共10题，答对8题\n才能闯关成功</text>
     </view>
-    <view class='chuangguan' bindtap='gotoQuize' style='background-image: url("/icons/chuangguan.png");background-repeat:no-repeat;'>开始闯关</view>
+    <view class='chuangguan' bindtap='gotoQuize'>开始闯关</view>
 
   </view>
   <view class='pageFooter'>
-    <view class='footer-self' style='background-image: url("/icons/homePage.png");width:160rpx;margin-left:-30rpx'>首页
+    <view class='footer-self' style='background-image: url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525182310273.jpg");width:160rpx;margin-left:-30rpx'>首页
     </view>
-    <view bindtap='gameExplain' class='footer-self' style='background-image: url("/icons/gameExplain.png");width:234rpx;'>游戏说明
+    <view bindtap='gameExplain' class='footer-self' style='background-image: url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525182310932.jpg");width:234rpx;'>游戏说明
     </view>
   </view>
 </view>

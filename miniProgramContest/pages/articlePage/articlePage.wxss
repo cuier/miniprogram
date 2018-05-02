@@ -1,1 +1,58 @@
 /* pages/articlePage/articlePage.wxss */
+
+/* tab*/
+
+.swiper-tab {
+    height: 60px;
+    line-height: 30px;
+    background: white;
+    color: black;
+    display: flex;
+    position: relative;
+    z-index: 2;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-tab-list {
+  height: 60px;
+    display: flex;
+    font-size: 30rpx;
+    flex: 1;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.noMove {
+  position: fixed;
+  top: -2rpx;
+  width: 100%;
+  z-index: 3;
+}
+
+.tab-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.withLineView {
+  display: flex;
+  flex-direction: column;
+  color: #fd8609;
+   /* margin-bottom: -21rpx;  */
+   justify-content: flex-end !important;
+   align-items: center;
+   height: 60px;
+  
+}
+
+.line {
+  height: 3px;
+   margin-top: 12px; 
+  width:100rpx;
+  background-color: #fd8609;
+}

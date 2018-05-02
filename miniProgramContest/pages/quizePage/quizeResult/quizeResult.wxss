@@ -1,0 +1,92 @@
+/* pages/quizePage/quizeResult/quizeResult.wxss */
+
+/* @import '../../../components/alertSheets/alertSheets.wxss'; */
+
+.modal-dialog {
+  position: fixed;
+  /* top: 120rpx;  */
+  height: 100%;
+  width: 100%;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.modal-success {
+  background-size: contain;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 720rpx;
+  /* padding-top: 40rpx; */
+  background-repeat: no-repeat;
+  background-image:url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525256758115.jpg");
+}
+.jiangli{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 32rpx;
+  align-items: center;
+  margin-top: 30rpx
+}
+.modal-success text{
+  color: white
+}
+.goonQuize{
+  width: 560rpx;
+  height: 130rpx;
+  margin-top: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+}
+.reQuize {
+  width: 560rpx;
+  height: 130rpx;
+  margin-top: 700rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+}
+
+.reLook {
+  width: 200rpx;
+  height: 90rpx;
+  background-repeat: no-repeat;
+  margin-left: 580rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pageFooter{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+  font-size: 32rpx
+}
+
+.footer-self{
+  height:88rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat:no-repeat;
+  background-size: contain;
+}
+
+.footer-share{
+  height: 130rpx;
+  width: 150rpx;
+}

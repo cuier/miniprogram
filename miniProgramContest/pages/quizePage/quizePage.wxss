@@ -7,6 +7,7 @@
   border-width: thick;
   border-color: black;
   border-style: solid;
+  background-image: url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525182309799.jpg");
 }
 
 .item-button{
@@ -45,6 +46,8 @@
   height: 120rpx;
   align-items: center;
   justify-content: center;
+  background-image: url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525182309892.jpg");
+  background-repeat:no-repeat;
 }
 
 .pageFooter{

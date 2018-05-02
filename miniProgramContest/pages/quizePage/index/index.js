@@ -160,14 +160,8 @@ Page(Object.assign({
           isResult: true,
           stopInterval: true,
         })
-        wx.showModal({
-          title: 'sorry',
-          content: '很遗憾，闯关失败，请再接再厉',
-          success:(res)=>{
-            wx.navigateBack({
-              delta:2
-            })
-          }
+        wx.navigateTo({
+          url: '../quizeResult/quizeResult',
         })
       }
       

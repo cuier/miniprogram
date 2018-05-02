@@ -5,11 +5,11 @@
       <text class="name">{{userInfo.nickName}}</text>
       <text class="name">等级：{{'暂无'}}</text>
     </view>
-    <image class='image-self' src='/icons/gold-coin.png'></image>
+    <image style='margin-bottom: 60rpx' class='image-self' src='/icons/gold-coin.png'></image>
     <text style='margin-bottom: 60rpx'>1200</text>
   </view>
   <view class='content'>
-    <view class='section1 border' style='background-image: url("/icons/background1.png"); ' bindtap='gotoQuiz'>
+    <view class='section1 border' bindtap='gotoQuiz'>
       <text style='margin-left:60rpx'>健康常识闯关</text>
       <image style='width:125px;height:150px;padding-bottom:130rpx;margin-left:40rpx' src='/icons/trophy.png'></image>
     </view>
@@ -29,12 +29,13 @@
       </view>
     </view>
     <view class='border section3' bindtap='gotoArticle'>
-      <image src='/icons/Triangle.png' style='width:100rpx;height:120rpx;'></image>
+      <image src='/icons/shan.png' style='width:180rpx;height:136rpx;'></image>
       <text>知 识 提 升</text>
-      <image src='/icons/redbook.png' style='width:160rpx;height:170rpx;margin-top:10rpx'></image>
+      <image src='/icons/redbook.png' style='width:160rpx;height:170rpx;margin-top:10rpx;margin-left:60rpx'></image>
     </view>
     <view class='section2'>
-      <view class='border section4 section4-1' bindtap='gotoStore'>商城</view>
+      <view class='border section4 section4-1' bindtap='gotoStore'>商城
+      <image src='/icons/money.png' style='width:120rpx;height:86rpx;margin-left:10rpx'></image></view>
       <view class='border section4 section4-2' bindtap='goto'>安佳健康理念</view>
     </view>
   </view>

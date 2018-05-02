@@ -17,13 +17,6 @@
   margin-left: 20rpx;
 }
 
-.image-self {
-  margin-left: 120rpx;
-  height: 60rpx;
-  width: 60rpx;
-  margin-bottom: 60rpx
-}
-
 .my-header view {
   display: flex;
   flex-direction: column;
@@ -56,6 +49,7 @@
   height: 252rpx;
   background-color: #FBEFE0;
   color: black !important;
+  background-image: url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525182309799.jpg");
 }
 
 .section2 {
@@ -90,19 +84,21 @@
 .section3{
   display: flex;
   /* align-content: space-between; */
-  justify-content: flex-end;
+  /* justify-content: flex-end; */
+  align-items: flex-end;
+  align-content: flex-end;
   flex: 1;
   margin-top: 30rpx;
   margin-right: 60rpx;
   height: 144rpx;
-  background-color: #e42b5e;
+  background-color: #EC4571;
 }
 .section4{
   height: 144rpx;
   width: 316rpx;
 }
-.section4-1{background-color: #d3a4ff}
+.section4-1{background-color: #B748F1}
 .section4-2{
-  background-color: #6f00d2;
+  background-color: #7541D5;
   margin-left: 30rpx;
 }

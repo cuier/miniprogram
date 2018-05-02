@@ -1,2 +1,32 @@
-<!--pages/articlePage/articlePage.wxml-->
-<text>pages/articlePage/articlePage.wxml</text>
+<view class="noMove">
+  <view class="swiper-tab">
+    <block wx:for="{{swipertab}}" wx:key="sptab">
+      <view class="swiper-tab-list" data-current="{{item.index}}">
+        <view wx:if="{{item.isCurr}}" class="withLineView">
+          <view class="tab-text">
+            <text>{{item.name}}</text>
+          </view>
+          <view class="line"></view>
+        </view>
+        <view wx:else class="tab-text">
+          <text style="color:#000">{{item.name}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="div-line" />
+</view>
+
+<view class='container'>
+  <block wx:for='{{articleArr}}' wx:key='article'>
+    <view class='content-container'>
+      <image></image>
+      <view class='content-right'>
+        <view class='content-footer'>
+          <text></text>
+          <text></text>
+        </view>
+      </view>
+    </view>
+  </block>
+</view>

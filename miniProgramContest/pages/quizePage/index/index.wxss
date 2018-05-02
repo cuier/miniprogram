@@ -43,6 +43,7 @@
   margin-left:150rpx;
   margin-top: -40rpx;
   background-repeat:no-repeat;
+  background-image: url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525228788258.jpg")
 }
 .title{
   /* display: flex; */
@@ -57,6 +58,7 @@
   margin: 10rpx 30rpx;
   background-repeat:no-repeat;
   background-size: cover;
+  background-image: url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525182308360.jpg")
 }
 
 .abcd{
@@ -82,4 +84,5 @@ align-items: center;
   width:160rpx;
   margin-left:-130rpx;
   margin-top: 60rpx;
+  background-image: url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525182310273.jpg")
 }
