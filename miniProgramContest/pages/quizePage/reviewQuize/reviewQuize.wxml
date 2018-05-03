@@ -1,0 +1,4 @@
+<view class='pagehead'>
+<block wx:for='{{}}'></block>
+</view>
+<view></view>

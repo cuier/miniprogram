@@ -92,8 +92,20 @@ module.exports = Object.assign({
     { code: 4, title: '称职妈妈', locked: 0},
     { code: 5, title: '超级妈妈', locked: 1},
     { code: 6, title: '超人妈妈', locked: 1},
-  ]
+  ],
     
-  
+  //---------------------本局回顾等级------------------
+  classArr: [
+    { id: 1, result: true },//true标识答对了
+    { id: 2, result: true },
+    { id: 3, result: true },
+    { id: 4, result: true },
+    { id: 5, result: true },
+    { id: 6, result: true },
+    { id: 7, result: true },
+    { id: 8, result: true },
+    { id: 9, result: true },
+    { id: 10, result: true },
+  ]
 
 }, configCode);

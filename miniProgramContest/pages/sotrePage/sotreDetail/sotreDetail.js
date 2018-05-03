@@ -1,4 +1,5 @@
-import network from '../../../http/newNetwork.js'
+// import network from '../../../http/newNetwork.js'
+import { Base } from '../../../utils/base.js'
 const sysWidth = wx.getSystemInfoSync().windowWidth
 const sysHight = wx.getSystemInfoSync().windowHeight
 

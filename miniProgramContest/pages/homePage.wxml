@@ -3,10 +3,10 @@
     <image class='image-user' src="{{userInfo.avatarUrl}}"></image>
     <view>
       <text class="name">{{userInfo.nickName}}</text>
-      <text class="name">等级：{{'暂无'}}</text>
+      <text class="name">等级：{{'暂无'}}{{levelid}}</text>
     </view>
     <image style='margin-bottom: 60rpx' class='image-self' src='/icons/gold-coin.png'></image>
-    <text style='margin-bottom: 60rpx'>1200</text>
+    <text style='margin-bottom: 60rpx'>1200{{goldcoin}}</text>
   </view>
   <view class='content'>
     <view class='section1 border' bindtap='gotoQuiz'>
@@ -14,7 +14,7 @@
       <image style='width:125px;height:150px;padding-bottom:130rpx;margin-left:40rpx' src='/icons/trophy.png'></image>
     </view>
     <view class='section2'>
-      <view class='section2-1 border' bindtap='gotoQuiz'>超人妈妈
+      <view class='section2-1 border' bindtap='gotoQuiz'>超人{{userInfo.gender==1?"爸爸":"妈妈"}}
         <image src='/icons/rocket.png' style='width:170rpx;height:180rpx;margin-top:30rpx'></image>
       </view>
       <view class='section2-2'>
@@ -23,15 +23,15 @@
           <image src='/icons/skirt.png' style='width:140rpx;height:160rpx;margin-left:30rpx'></image>
         </view>
         <view class='section2-2-1 border' bindtap='gotoQuiz'>
-          <text>贴心\n女神</text>
+          <text>吃出\n健康</text>
           <image src='/icons/goddess.png' style='width:140rpx;height:200rpx;margin-left:30rpx'></image>
         </view>
       </view>
     </view>
     <view class='border section3' bindtap='gotoArticle'>
-      <image src='/icons/shan.png' style='width:180rpx;height:136rpx;'></image>
+      <image src='/icons/shan.png' style='width:160rpx;height:116rpx;margin-bottom:-20rpx;margin-right:20rpx'></image>
       <text>知 识 提 升</text>
-      <image src='/icons/redbook.png' style='width:160rpx;height:170rpx;margin-top:10rpx;margin-left:60rpx'></image>
+      <image src='/icons/redbook.png' style='width:160rpx;height:170rpx;margin-top:10rpx;margin-left:70rpx'></image>
     </view>
     <view class='section2'>
       <view class='border section4 section4-1' bindtap='gotoStore'>商城

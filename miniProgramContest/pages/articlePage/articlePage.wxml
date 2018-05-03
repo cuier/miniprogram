@@ -17,14 +17,15 @@
   <view class="div-line" />
 </view>
 
-<view class='container'>
+<view class='container' style='margin-top:90rpx'>
   <block wx:for='{{articleArr}}' wx:key='article'>
-    <view class='content-container'>
-      <image></image>
+    <view id='{{item.flag}}' bindtap='gotoDetail' class='content-container'>
+      <image src='{{item.imgUrl}}'></image>
       <view class='content-right'>
+      <text>{{item.title}}</text>
         <view class='content-footer'>
-          <text></text>
-          <text></text>
+          <text>标签{{item.flag}}</text>
+          <text>阅读：{{item.readNum}}</text>
         </view>
       </view>
     </view>

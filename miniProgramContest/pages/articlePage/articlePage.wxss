@@ -56,3 +56,37 @@
   width:100rpx;
   background-color: #fd8609;
 }
+
+.content-container{
+  display: flex;
+  flex-direction: row;
+  border-radius: 20rpx;
+  background-color: white;
+  height: 240rpx;
+  margin: 20rpx 60rpx 10rpx 0rpx;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.content-container image{
+  height: 164rpx;
+  width: 172rpx
+}
+
+.content-right{
+  display: flex;
+  flex-direction: column;
+   margin-left: 80rpx; 
+  /* align-content: space-between;
+  justify-content: space-between; */
+}
+
+.content-footer{
+  padding-right: 30rpx;
+  margin-top: 100rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: #4A4A4A 
+}

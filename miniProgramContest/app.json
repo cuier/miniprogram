@@ -1,15 +1,16 @@
 {
-  "pages": [
+  "pages": ["pages/quizePage/reviewQuize/reviewQuize",
     "pages/homePage",
+    "pages/articlePage/articleDetail/articleDetail",
     "pages/articlePage/articlePage",
     "pages/quizePage/quizeResult/quizeResult",
-   
     "pages/quizePage/index/index",
     "pages/quizePage/quizePage",
     "pages/debug/test",
     "pages/sotrePage/sotrePage",
     "pages/sotrePage/sotreDetail/sotreDetail",
     "pages/personalPage/personalPage"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

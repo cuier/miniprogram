@@ -1,4 +1,6 @@
-import network from '../../http/newNetwork.js'
+// import network from '../../http/newNetwork.js'
+import { Base } from '../../utils/base.js'
+var base = new Base()
 const sysWidth = wx.getSystemInfoSync().windowWidth
 const sysHight = wx.getSystemInfoSync().windowHeight
 
@@ -9,5 +11,11 @@ Page({
     themeBgWidth: sysWidth - 30,  //主题宽
     themeBgHieght: 80 / 350 * (sysWidth - 30), //主题高
   },
+
+  onLoad:function(options){
+    this.setData({
+      userInfo: JSON.parse(options.userInfo) 
+    })
+  }
 
 })

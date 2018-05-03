@@ -1,0 +1,17 @@
+<view class='container'>
+  <view class='content'>
+    <image src='/icons/article/timg.png'></image>
+    <text class='title'>1岁宝宝不能吃什么？{{}}</text>
+    <view class='content-footer'>
+      <text>标签1</text>
+      <text>阅读：800</text>
+    </view>
+    <rich-text adjust-position> {{content}}</rich-text>
+  </view>
+</view>
+<view class='pageFooter'>
+    <image src='/icons/article/star.png'></image>
+    <text>收藏</text>
+    <image src='/icons/article/share.png'></image>
+    <text>分享</text>
+  </view>

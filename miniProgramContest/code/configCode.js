@@ -8,7 +8,7 @@ let _ENV = 0;
 
 const urls = [
   //开发地址
-  { name: '开发环境', value: "0", url: "http://10.10.56.145:8180/umfWeChatPlat/" ,},
+  { name: '开发环境', value: "0", url: "http://baidu.com/" ,},
   //测试地址
   { name: '测试环境', value: "1", url: "http://10.10.178.107:8080/umfWeChatPlat", },
   //UAT地址
