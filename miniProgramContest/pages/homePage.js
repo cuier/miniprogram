@@ -45,8 +45,10 @@ Page({
     })
   },
   gotoQuiz: function (e) {
+    let topicid=e.currentTarget.id
+    let userInfo = this.data.userInfo ? this.data.userInfo:{}
     wx.navigateTo({
-      url: '/pages/quizePage/quizePage',
+      url: '/pages/quizePage/quizePage?topicid=' + topicid+'&gender='+userInfo.gender,
     })
   },
   gotoArticle: function () {
@@ -68,10 +70,14 @@ Page({
   _getUserInfo(cb) {
     const failNum = {
       avatarUrl: '/icons/user@default.png',
-      nickName: '未知'
+      nickName: '未知',
+      gender:2
     }
     wx.login({
       success: (ress) => {
+        this.setData({
+          code:ress.code
+        })
         wx.getUserInfo({
           success: (res) => {
             typeof cb == "function" && cb(res.userInfo);
@@ -96,7 +102,7 @@ Page({
     delete res.nickName;  //将昵称去除
     var allParams = {
       url: 'user/wx_info',
-      data: { nickname: nickName, extend: JSON.stringify(res) },
+      data: { code:this.data.code, nickname: nickName, extend: JSON.stringify(res) },
     };
     base.request(allParams,(res)=>{
       //网络请求返回金币数量和等级

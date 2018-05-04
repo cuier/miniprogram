@@ -9,20 +9,20 @@
     <text style='margin-bottom: 60rpx'>1200{{goldcoin}}</text>
   </view>
   <view class='content'>
-    <view class='section1 border' bindtap='gotoQuiz'>
+    <view id='0' class='section1 border' bindtap='gotoQuiz'>
       <text style='margin-left:60rpx'>健康常识闯关</text>
       <image style='width:125px;height:150px;padding-bottom:130rpx;margin-left:40rpx' src='/icons/trophy.png'></image>
     </view>
     <view class='section2'>
-      <view class='section2-1 border' bindtap='gotoQuiz'>超人{{userInfo.gender==1?"爸爸":"妈妈"}}
+      <view class='section2-1 border' id='1' bindtap='gotoQuiz'>超人{{userInfo.gender==1?"爸爸":"妈妈"}}
         <image src='/icons/rocket.png' style='width:170rpx;height:180rpx;margin-top:30rpx'></image>
       </view>
       <view class='section2-2'>
-        <view class='section2-2-1 border' bindtap='gotoQuiz'>
+        <view class='section2-2-1 border' id='2' bindtap='gotoQuiz'>
           <text style='padding-left:30rpx'>我要\n变瘦</text>
           <image src='/icons/skirt.png' style='width:140rpx;height:160rpx;margin-left:30rpx'></image>
         </view>
-        <view class='section2-2-1 border' bindtap='gotoQuiz'>
+        <view class='section2-2-1 border' id='3' bindtap='gotoQuiz'>
           <text>吃出\n健康</text>
           <image src='/icons/goddess.png' style='width:140rpx;height:200rpx;margin-left:30rpx'></image>
         </view>

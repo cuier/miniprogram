@@ -1,12 +1,61 @@
 /* pages/quizePage/reviewQuize/reviewQuize.wxss */
-
+@import '../index/index.wxss';
+@import '../../articlePage/articleDetail/articleDetail.wxss';
 .pagehead{
   width: 100%;
-  height: 320rpx;
-  background-image: url();
+  height: 260rpx;
+  background-image: url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525354920862.jpg");
   display: flex;
   flex-wrap: wrap;
   flex: 1;
   flex-direction: row;
-  margin-left: 10rpx  
+  background-size: contain;
+  margin-top: 20rpx;
+  padding: 20rpx 20rpx 80rpx 60rpx;
+  background-repeat: no-repeat;
+}
+
+.question-button{
+  width: 110rpx; 
+  height: 112rpx;
+  font-size: 38rpx;
+  color: white; 
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+  margin:  10rpx  10rpx -100rpx 10rpx;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.question-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-image: url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525182309799.jpg");
+  background-color: #FBEFE0;
+   width: 90%;
+   height: 1000rpx;
+   margin: 4%;
+    border-radius: 30rpx;
+  border-width: thick;
+  border-color: black;
+  border-style: solid;
+}
+
+.biaoti-nOfItems-self{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100rpx;
+  width: 300rpx;
+  /* margin-left:150rpx; */
+   margin-top: 30rpx; 
+  background-repeat:no-repeat;
+  background-image: url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525228788258.jpg")
+}
+
+.title-self{
+  margin: 60rpx 40rpx;
 }

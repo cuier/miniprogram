@@ -22,7 +22,7 @@
 
   </view>
   <view class='pageFooter'>
-    <view class='footer-self' style='background-image: url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525182310273.jpg");width:160rpx;margin-left:-30rpx'>首页
+    <view bindtap='goback' class='footer-self' style='background-image: url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525182310273.jpg");width:160rpx;margin-left:-30rpx'>首页
     </view>
     <view bindtap='gameExplain' class='footer-self' style='background-image: url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525182310932.jpg");width:234rpx;'>游戏说明
     </view>

@@ -85,27 +85,58 @@ module.exports = Object.assign({
     INPUT: 'input',
   },
   //---------------------闯关等级------------------
-  mamiLevel:[
-    { code: 1, title: '实习妈妈', locked: 0 },
-    { code: 2, title: '初级妈妈', locked: 0},
-    { code: 3, title: '中级妈妈', locked: 0},
-    { code: 4, title: '称职妈妈', locked: 0},
-    { code: 5, title: '超级妈妈', locked: 1},
-    { code: 6, title: '超人妈妈', locked: 1},
+  healthLevel:[
+    { code: 1, title: '健康小白', locked: 0 },
+    { code: 2, title: '健康学通', locked: 1},
+    { code: 3, title: '健康达人', locked: 1},
+    { code: 4, title: '健康大咖', locked: 1},
+    { code: 5, title: '健康专家', locked: 1},
+    { code: 6, title: '健康大神', locked: 1},
   ],
-    
+  mamiLevel: [
+    { code: 1, title: '实习妈妈', locked: 0 },
+    { code: 2, title: '初级妈妈', locked: 1 },
+    { code: 3, title: '中级妈妈', locked: 1 },
+    { code: 4, title: '称职妈妈', locked: 1 },
+    { code: 5, title: '超级妈妈', locked: 1 },
+    { code: 6, title: '超人妈妈', locked: 1 },
+  ],
+  slimLevel: [
+    { code: 1, title: '瘦身新手', locked: 0 },
+    { code: 2, title: '瘦身熟手', locked: 1 },
+    { code: 3, title: '瘦身达人', locked: 1 },
+    { code: 4, title: '瘦身专家', locked: 1 },
+    { code: 5, title: '瘦身大师', locked: 1 },
+    { code: 6, title: '瘦身王者', locked: 1 },
+  ],
+  dadLevel: [
+    { code: 1, title: '实习爸爸', locked: 0 },
+    { code: 2, title: '初级爸爸', locked: 1 },
+    { code: 3, title: '中级爸爸', locked: 1 },
+    { code: 4, title: '称职爸爸', locked: 1 },
+    { code: 5, title: '超级爸爸', locked: 1 },
+    { code: 6, title: '超人爸爸', locked: 1 },
+  ],
+  chihuoLevel: [
+    { code: 1, title: '学渣型吃货', locked: 0 },
+    { code: 2, title: '学霸型吃货', locked: 1 },
+    { code: 3, title: '导师型吃货', locked: 1 },
+    { code: 4, title: '砖家型吃货', locked: 1 },
+    { code: 5, title: '叫兽型吃货', locked: 1 },
+    { code: 6, title: '院长型吃货', locked: 1 },
+  ],
   //---------------------本局回顾等级------------------
   classArr: [
-    { id: 1, result: true },//true标识答对了
-    { id: 2, result: true },
-    { id: 3, result: true },
-    { id: 4, result: true },
-    { id: 5, result: true },
-    { id: 6, result: true },
-    { id: 7, result: true },
-    { id: 8, result: true },
-    { id: 9, result: true },
-    { id: 10, result: true },
-  ]
+    { id: 1, result: 1},//true标识答对了
+    { id: 2, result: 1 },
+    { id: 3, result: 1 },
+    { id: 4, result: 1 },
+    { id: 5, result: 1 },
+    { id: 6, result: 0 },
+    { id: 7, result: 0 },
+    { id: 8, result: 0 },
+    { id: 9, result: 0 },
+    { id: 10, result: 0 },
+  ],
 
 }, configCode);

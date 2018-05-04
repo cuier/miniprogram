@@ -1,6 +1,8 @@
 // pages/quizePage/quizePage.js
 import * as constants from '../../code/constants.js'
 import {$alertSheets} from '../../components/CompRouter.js'
+import {Base} from '../../utils/base.js'
+var base = new Base()
 Page({
 
   /**
@@ -13,26 +15,15 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function (options) {  
+    let contentArr = chooseSubject(options.topicid, options.gender)
+    options.levelid = 3
     this.setData({
-      subjectId: options.subjectId ? options.subjectId:0,
-      contentArr:constants.mamiLevel
+      topicid:options.topicid,
+      levelid:options.levelid,
+      gender:options.gender,
+      contentArr: formatArr(contentArr, options.levelid)
     })
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
   },
 
   /**
@@ -42,8 +33,18 @@ Page({
   
   },
   gotoQuize:function(e){
+    //不在这做网络请求
+    // let params = {
+    //   url:'',
+    //   data:{}
+    // }
+    // base.request(params,(res)=>{
+    //   if(res.retCode=='0000'){
+
+    //   }
+    // })
     wx.navigateTo({
-      url: '/pages/quizePage/index/index',
+      url: '/pages/quizePage/index/index?topicid='+this.data.topicid+'&levelid='+this.data.levelid+'&gender='+this.data.gender,
     })
   },
   gameExplain:function(e){
@@ -58,5 +59,31 @@ Page({
        onCancel: (e) => {
       },
     })
+  },
+  goback:function(){
+    wx.navigateBack({
+      delta:1
+    })
   }
 })
+
+function chooseSubject(id,gender){
+  switch(id){
+    case '0':
+    return constants.healthLevel;
+    case '1':
+    return gender==1?constants.dadLevel: constants.mamiLevel
+    case '2':
+    return constants.slimLevel;
+    case '3':
+    return constants.chihuoLevel
+  }
+}
+
+function formatArr(contentArr, levelid){
+  for (let i = 1; i < levelid;i++){
+    contentArr[i].locked = 0
+  }
+
+  return contentArr 
+}

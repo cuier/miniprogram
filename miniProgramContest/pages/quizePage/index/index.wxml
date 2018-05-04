@@ -3,10 +3,10 @@
 
 <view class="container">
   <image class='image0' src='/icons/quize/beautiful.png'></image>
-  <view class='bg bg1' style='background-image: url("/icons/background1.png");' />
-  <view class='bg bg2' style='background-image: url("/icons/background1.png");'>
+  <view class='bg bg1'  />
+  <view class='bg bg2' >
   </view>
-  <view class='bg bg3' style='background-image: url("/icons/background1.png");'>
+  <view class='bg bg3'>
     <view style='margin:30rpx 40rpx 0'>已答对: {{rightNum}}</view>
     <view style="padding-left:400rpx;margin-top:-40px">
       <template is='circleProgress' data='{{...circleProgress}}' />
@@ -25,29 +25,10 @@
              <image wx:elif='{{isResult&&index==select}}' style='width:60rpx;height:60rpx;margin-left:-60rpx' src='/icons/quize/wrong.png'></image>
           </view>
         </block>
-        <!-- <view class="form-container" id='0' bindtap="btnOpClick" style='background-image: url("/icons/quize/abcd.png")'>
-          <image class='abcd' src='/icons/quize/a.png'></image>
-          <view class='contents'>{{postList[idx].content[0]}}</view>
-        </view>
-
-        <view class="form-container" id='1' bindtap="btnOpClick" style='background-image: url("/icons/quize/abcd.png")'>
-          <image class='abcd' src='/icons/quize/b.png'></image>
-          <view class='contents'>{{postList[idx].content[1]}}</view>
-        </view>
-
-        <view class="form-container" id='2' bindtap="btnOpClick" style='background-image: url("/icons/quize/abcd.png")'>
-          <image class='abcd' src='/icons/quize/c.png'></image>
-          <view class='contents'>{{postList[idx].content[2]}}</view>
-        </view>
-
-        <view class="form-container" id='3' bindtap="btnOpClick" style='background-image: url("/icons/quize/abcd.png")'>
-          <image class='abcd' src='/icons/quize/d.png'></image>
-          <view class='contents'>{{postList[idx].content[3]}}</view>
-        </view> -->
 
       </scroll-view>
     </view>
-    <view class='footer-self' >首页
+    <view bindtap='goBack' class='footer-self' >首页
     </view>
   </view>
 </view>

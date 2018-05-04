@@ -56,6 +56,10 @@ class Base {
 
   _processError(err) {
     console.log(err);
+    // wx.showModal({
+    //   title: 提示,
+    //   content: err.retMsg,
+    // })
   }
 
   _refetch(param) {

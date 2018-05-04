@@ -5,9 +5,8 @@
     <view class='content-area'>
       <textarea class="alert_textArea" auto-height="true" disabled="false" fixed="true">{{gameExplain}}</textarea>
       <image class='giftImage' src='/icons/quize/gift.png'></image>
-      <image class='closeImg' src='/icons/quize/close.png'></image>
+      <image bindtap='{{onCancel}}' class='closeImg' src='/icons/quize/close.png'></image>
     </view>
     
-
   </view>
 </template>

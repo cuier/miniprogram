@@ -6,6 +6,8 @@ import debugUtil from '../../../utils/debugUtil'
 import *as sensorUtil from '../../../utils/sensorUtil'
 import *as constants from '../../../code/constants.js'
 import circleProgress from '../../../commonView/circleProgress/circleProgress.js'
+import { Base } from '../../../utils/base.js'
+var base = new Base()
 // var wrongNum = 0
 var local_database = [{
   "name": "‘收取关山五十州’上句是什么？",
@@ -66,109 +68,157 @@ Page(Object.assign({
     step: null,
     time: null,
     stepTimer: null,
-    rightNum:0,
-    wrongNum:0,
+    rightNum: 0,
+    wrongNum: 0,
     // stopInterval: true,
+    reviewArr:[]  //保存本局回顾数据
   },
   btnOpClick: function (e) {
+    
     var select = e.currentTarget.id;
     var jieg = this.data.postList[this.data.idx].daan;
     this.setData({
-      select:select,
+      select: select,
       isResult: true,
       // stopInterval:true,
     })
-    if(select!=jieg){
-      this.dealWrong()
+    if (select != jieg) {
+      this.dealWrong(select)
     }
     else if (this.data.idx < this.data.postList.length - 1) {
-      this.setData({
-        stopInterval: true,
-        rightNum:this.data.rightNum+1
-      })
-        setTimeout(()=>{
-          this.setData({
-            num: 100,
-            idx: this.data.idx + 1,
-            className: 'weui-animate-fade-out',
-            isResult:false,
-            stopInterval:false
-          })
-        },2000)
-    }else{
+      this.pushDataToReview(this.data.postList[this.data.idx],select)
+      
       this.setData({
         stopInterval: true,
         rightNum: this.data.rightNum + 1
       })
-      wx.showModal({
-        title: '恭喜',
-        content: '恭喜闯关成功',
+      setTimeout(() => {
+        this.setData({
+          num: 100,
+          idx: this.data.idx + 1,
+          className: 'weui-animate-fade-out',
+          isResult: false,
+          stopInterval: false
+        })
+      }, 2000)
+    } else {
+      this.pushDataToReview(this.data.postList[this.data.idx], select)
+      this.setData({
+        stopInterval: true,
+        rightNum: this.data.rightNum + 1
+      })
+      //闯关成功
+      wx.redirectTo({
+        url: '../quizeResult/quizeResult?isSuccess=1?levelid='+this.data.levelid+'&topicid='+this.data.topicid+'&gender='+this.data.gender,//闯关成功界面进行加一
       })
     }
-    
+
   },
-    onShow:function (options) {
-      //调试代码，打开摇一摇进入调试页面
-        if(debugUtil.isDebug()){
-          wx.onAccelerometerChange(res=>{
-           sensorUtil.shake(res,()=>{
-             wx.navigateTo({
-               url: '../debug/test'
-             })
-           })
+  onShow: function (options) {
+    //调试代码，打开摇一摇进入调试页面
+    if (debugUtil.isDebug()) {
+      wx.onAccelerometerChange(res => {
+        sensorUtil.shake(res, () => {
+          wx.navigateTo({
+            url: '../debug/test'
           })
-        }
-    },
-    onLoad: function () {
-      this.setData({
-        width: app.globalData.systemInfo.screenWidth
+        })
       })
-    },
+    }
+  },
+  onLoad: function (options) {
+    this.setData({
+      width: app.globalData.systemInfo.screenWidth,
+      levelid:options.levelid,
+      topicid:options.topicid
+    })
+    this.requestPostList(options.topicid, options.levelid)
+  },
 
-    onReady:function(){
-      /*倒计时*/
-      // 获得circle组件
-      // this.circle = this.selectComponent("#circle");
-      // 绘制背景圆环
-      circleProgress.drawCircleBg( 35, 10)
-      // 绘制彩色圆环
-      this.stepInterval()
-      
-    },
+  onUnload: function () {
+    clearInterval(this.stepTimer)
+  },
+  onHide: function () {
+    clearInterval(this.stepTimer)
+  },
 
-    dealWrong(){
-      // clearInterval(this.stepTimer)
+  onReady: function () {
+    /*倒计时*/
+    // 获得circle组件
+    // this.circle = this.selectComponent("#circle");
+    // 绘制背景圆环
+    circleProgress.drawCircleBg(35, 10)
+    // 绘制圆环
+    this.stepInterval()
+  },
+
+  dealWrong(select) {
+    
+    this.setData({
+      wrongNum: this.data.wrongNum + 1,
+      stopInterval: true,
+    })
+
+    if (this.data.wrongNum < 2) {
+      this.pushDataToReview(this.data.postList[this.data.idx], select)
+      setTimeout(() => {
+        // this.stepInterval()
+        this.setData({
+          num: 100,
+          idx: this.data.idx + 1,
+          className: 'weui-animate-fade-out',
+          isResult: false,
+          stopInterval: false
+        })
+      }, 2000)
+    } else {
+      this.pushDataToReview(this.data.postList[this.data.idx], select)
+      clearInterval(this.stepTimer)
       this.setData({
-        wrongNum:this.data.wrongNum+1,
+        isResult: true,
         stopInterval: true,
       })
+      //闯关失败
+      wx.redirectTo({
+        url: '../quizeResult/quizeResult?isSuccess=0',
+      })
+    }
 
-      if(this.data.wrongNum<2){
-        setTimeout(() => {
-          // this.stepInterval()
-          this.setData({
-            num: 100,
-            idx: this.data.idx + 1,
-            className: 'weui-animate-fade-out',
-            isResult: false,
-            stopInterval: false
-          })
-        }, 2000)
-      }else{
-        clearInterval(this.stepTimer)
+  },
+  requestPostList: function (topicid, levelid) {
+    var allParams = {
+      url: '/Api/Question/list',
+      data: { topicid: topicid, levelid: levelid },
+    };
+    base.request(allParams, (res) => {
+      if (res.retCode == '0000') {
+        //网络请求返回金币数量和等级
         this.setData({
-          isResult: true,
-          stopInterval: true,
-        })
-        wx.navigateTo({
-          url: '../quizeResult/quizeResult',
+          postList:res.data
         })
       }
-      
-    },
-    quizeFail:function(){
+      else{
+        //请求失败  不处理
+      }
 
-    },
+    });
+  },
+  goBack:function(){
+    wx.navigateBack({
+      delta:2
+    })
+  },
+  pushDataToReview(data, select) {
+    let reviewArr = this.data.reviewArr
+    reviewArr.push({
+      "name": data.name,
+      "daan": data.daan,
+      "content": data.content,
+      "selected": select
+    })
+    this.setData({
+      reviewArr: reviewArr
+    })
+  }
+}, circleProgress))
 
-    quizeSuccess:function(){},
-},circleProgress))

@@ -4,7 +4,7 @@
  */
 //设置环境 ,生产需要设置为 3
 // 0:develep 1:test 2:uat 3 release
-let _ENV = 0;
+let _ENV = 3;
 
 const urls = [
   //开发地址
@@ -14,7 +14,7 @@ const urls = [
   //UAT地址
   { name: 'UAT环境', value: "2", url: "https://xydev.umfintech.com/umfWeChatPlat/",},
   //发布地址
-  { name: '生产环境', value: "3", url: "https://xy.umfintech.com/umfWeChatPlat/" },
+  { name: '生产环境', value: "3", url: "https://fanqietotop.cn/" },
 ]
 function url() {
   if (_ENV == urls.length - 1) {

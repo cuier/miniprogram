@@ -15,9 +15,15 @@ Page({
   onLoad: function (options) {
     this.setData({
       isSuccess:true,
-      screenWidth: app.globalData.systemInfo.screenWidth
-      // isSuccess:optinos.isSuccess
+      screenWidth: app.globalData.systemInfo.screenWidth,
+      // isSuccess:optinos.isSuccess,
+      levelid:options.levelid,
     })
+    if (options.isSuccess){
+      this.setData({
+        levelName: getLevelName(this.data.levelid-1, options.gender, options.topicid)
+      })  
+    }
   },
 
   /**
@@ -34,34 +40,19 @@ Page({
   
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
+gotoChuanguan:function(){
+  wx.redirectTo({
+    url: '../index/index?topicid='+this.data.topicid+'&levelid='+this.data.levelid,
+  })
+},
+  gotoReview:function(){
+    wx.redirectTo({
+      url: '../reviewQuize/reviewQuize',
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
+// share:function(){
+//   _ShareAppMessageReturnObject
+// }
   /**
    * 用户点击右上角分享
    */
@@ -69,3 +60,16 @@ Page({
   
   }
 })
+
+function getLevelName(levelid,gender=2,topicid){
+    switch (topicid) {
+      case '0':
+        return constants.healthLevel[levelid].title;
+      case '1':
+        return gender == 1 ? constants.dadLevel[levelid].title : constants.mamiLevel[levelid].title
+      case '2':
+        return constants.slimLevel[levelid].title;
+      case '3':
+        return constants.chihuoLevel[levelid].title
+    }
+  }

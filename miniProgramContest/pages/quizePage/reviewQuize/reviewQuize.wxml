@@ -1,4 +1,36 @@
 <view class='pagehead'>
-<block wx:for='{{}}'></block>
+  <block wx:for='{{classArr}}' wx:key='classArr'>
+    <view wx:if='{{currId==index&&item.result==1}}' class='question-button' style='background-image: url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525400352600.jpg")'>
+      <text>{{item.id}}</text>
+    </view>
+    <view wx:elif='{{currId==index&&item.result==0}}' class='question-button ' style='background-image: url( "http://weiyinyue.music.sina.com.cn/movie_still/176848_1525400351229.jpg")'>
+      <text>{{item.id}}</text>
+    </view>
+    <view wx:else class='question-button' style='background-image: url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525400351880.jpg")'>
+      <text>{{item.id}}</text>
+    </view>
+  </block>
 </view>
-<view></view>
+<view class='question-section'>
+  <view class='biaoti-nOfItems-self'>第{{currId+1}}题</view>
+  <view class='title-self'>{{postList[currId].name}}</view>
+  <scroll-view>
+  <block wx:for='{{postList[currId].content}}' wx:key='content'>
+    <view style='margin-left:60rpx' class="form-container" id='{{index}}' bindtap="btnOpClick">
+      <image class='abcd' src='{{"/icons/quize/pic"+index+".png"}}'></image>
+      <view class='contents'>{{postList[currId].content[index]}}</view>
+      <image wx:if='{{index==postList[currId].daan}}' style='width:60rpx;height:60rpx;margin-left:-60rpx' src='/icons/quize/right.png'></image>
+      <image wx:elif='{{index==select}}' style='width:60rpx;height:60rpx;margin-left:-60rpx' src='/icons/quize/wrong.png'></image>
+    </view>
+  </block>
+  </scroll-view>
+  <view style='margin:30rpx 200rpx 20rpx -300rpx'><text>解释：
+  就发了{{}}</text></view>
+</view>
+
+<view class='pageFooter'>
+    <image src='/icons/article/star.png'></image>
+    <text>收藏</text>
+    <image src='/icons/article/share.png'></image>
+    <text>分享</text>
+  </view>

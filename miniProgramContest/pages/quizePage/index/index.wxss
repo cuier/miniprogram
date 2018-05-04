@@ -11,6 +11,7 @@
   height: 1060rpx;
   width: 600rpx;
   background-color: #FBEFE0;
+  background-image: url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525182309799.jpg")
 }
 .bg1{
   margin: 50rpx 0rpx
@@ -57,7 +58,7 @@
   justify-content: flex-start;
   margin: 10rpx 30rpx;
   background-repeat:no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-image: url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525182308360.jpg")
 }
 
@@ -72,6 +73,7 @@ display: flex;
 justify-content: center;
 width: 400rpx;
 align-items: center;
+/* background-size: contain; */
 }
 
 .footer-self{
