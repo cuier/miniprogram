@@ -10,7 +10,7 @@ class Base {
   }
 
   //http 请求类, 当noRefech为true时，不做未授权重试机制
-  request(params, noRefetch = false) {
+  request(params, cb,noRefetch = false) {
     var that = this;
     var url = "https://fanqietotop.cn/" + params.url;
     // if (!params.type) {
@@ -36,10 +36,6 @@ class Base {
       url: url,
       data: params.data,
       method: params.type,
-      // header: {
-      //     'content-type': 'application/json',
-      //     'token': wx.getStorageSync('token')
-      // },
       header: header,
       success: function (res) {
 
@@ -49,7 +45,7 @@ class Base {
         // var startChar = code.charAt(0);
         var code = res.data.code
         if (code == '200') {
-          params.sCallback && params.sCallback(res.data);
+          cb && cb(res.data);
         } else {
           // 1001 => '获取session_key及openID时异常，微信内部错误',
           // 1002 => 'Token已过期或无效Token',
@@ -84,7 +80,7 @@ class Base {
   _refetch(param) {
     var token = new Token();
     token.getTokenFromServer((token) => {
-      this.request(param, true);
+      this.request(param,cb, true);
     });
   }
 
