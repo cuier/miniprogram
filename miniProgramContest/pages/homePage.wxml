@@ -1,4 +1,4 @@
-<view class='container'>
+<view class='container' >
   <view class="my-header" bindtap='gotoMyPage'>
     <image class='image-user' src="{{userInfo.avatarUrl}}"></image>
     <view>
@@ -39,4 +39,5 @@
       <view class='border section4 section4-2' bindtap='goto'>{{topiclist[6].name}}</view>
     </view>
   </view>
+  <!-- <view style='height:40rpx;'></view> -->
 </view>

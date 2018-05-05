@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <import src='/commonView/circleProgress/circleProgress.wxml' />
 
-<view class="container">
+<view class="container" catchtouchmove="preventTouchMove">
   <image class='image0' src='/icons/quize/beautiful.png'></image>
   <view class='bg bg1'  />
   <view class='bg bg2' >

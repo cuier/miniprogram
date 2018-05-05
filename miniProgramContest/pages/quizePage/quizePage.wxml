@@ -1,11 +1,11 @@
 <!--pages/quizePage/quizePage.wxml-->
 <import src="/components/alertSheets/alertSheets.wxml" />
-<view class="container">
+<view class="container" catchtouchmove="preventTouchMove">
   <view class='page_section1' style='height: 524rpx; ' catchtap="catchtap">
     <view class="content-self">
       <block wx:for="{{contentArr}}" wx:key="contentArr">
-        <view class="item-button" style='background-image: url({{index<curlevelid?"http://weiyinyue.music.sina.com.cn/movie_still/176848_1525182308372.jpg":"http://weiyinyue.music.sina.com.cn/movie_still/176848_1525182309220.jpg"}});' id="{{item.code}}" bindtap='chooseState'>
-          <text wx:if='{{index>=curlevelid}}' >{{index+1}}</text>
+        <view class="item-button" style='background-image: url({{index>=curlevelid?"http://weiyinyue.music.sina.com.cn/movie_still/176848_1525182308372.jpg":"http://weiyinyue.music.sina.com.cn/movie_still/176848_1525182309220.jpg"}});' id="{{item.code}}" bindtap='chooseState'>
+          <text wx:if='{{index<curlevelid}}' >{{index+1}}</text>
           <text style='padding-bottom:30rpx;margin-top:46rpx'>{{item.name}}</text>
         </view>
       </block>

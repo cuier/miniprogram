@@ -2,18 +2,17 @@
 /* @import 'component/compRouter.wxss'; */
 page {
   display: block;
-  min-height: 100%;
+   min-height: 100%; 
    background-color: #5D72F3; 
   background-image: url('http://p7z7150ac.bkt.clouddn.com/pageBackground.png')
 }
 
 /*页面内边距*/
 
-.container {
-  width: 100%;
-  padding: 40rpx 30rpx;
-  
-}
+ .container { 
+   /* position: fixed; */
+   margin:30rpx 15px 60rpx 15px;
+ } 
 
 .white-background {
   background-color:#fff;

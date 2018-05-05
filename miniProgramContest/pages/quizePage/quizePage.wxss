@@ -1,7 +1,7 @@
 /* pages/quizePage/quizePage.wxss */
 @import "../../components/alertSheets/alertSheets.wxss";
 .page_section1 {
-  margin: 0rpx 60rpx 60rpx 0rpx;
+  margin: 0rpx 0rpx 60rpx 0rpx;
   background-color: #FBEFE0;
   border-radius: 40rpx;
   border-width: thick;
