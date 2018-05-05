@@ -14,14 +14,14 @@
     <view class='{{className}}'>
       <view class='biaoti-nOfItems '> 第{{idx+1}}题</view>
       <view>
-        <view class="title">{{postList[idx].name}}</view>
+        <view class="title">{{postList[idx].title}}</view>
       </view>
       <scroll-view>
         <block wx:for='{{postList[idx].content}}' wx:key='content'>
           <view class="form-container" id='{{index}}' bindtap="btnOpClick">
             <image class='abcd' src='{{"/icons/quize/pic"+index+".png"}}'></image>
             <view class='contents'>{{postList[idx].content[index]}}</view>
-             <image wx:if='{{isResult&&index==postList[idx].daan}}' style='width:60rpx;height:60rpx;margin-left:-60rpx' src='/icons/quize/right.png'></image> 
+             <image wx:if='{{isResult&&index==postList[idx].answer}}' style='width:60rpx;height:60rpx;margin-left:-60rpx' src='/icons/quize/right.png'></image> 
              <image wx:elif='{{isResult&&index==select}}' style='width:60rpx;height:60rpx;margin-left:-60rpx' src='/icons/quize/wrong.png'></image>
           </view>
         </block>

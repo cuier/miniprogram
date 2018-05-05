@@ -11,7 +11,8 @@ class Index extends Base {
   requestPostList(topicid, levelid,cb) {
     var allParams = {
       url: '/Question/list',
-      data: { topicid: topicid, levelid: levelid },
+      type:'post',
+      data: { topicid: 1, levelid: 1 ,page:1,count:10},
     };
     this.request(allParams, (res) => {
       cb && cb(res.data)

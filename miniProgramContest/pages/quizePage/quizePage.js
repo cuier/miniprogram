@@ -24,7 +24,8 @@ Page({
       // gender:options.gender,
       // contentArr: formatArr(contentArr, options.levelid)
       contentArr: JSON.parse(options.contentArr),
-      curlevelid: options.curlevelid ? options.currlevelid:2 
+      curlevelid: options.curlevelid ? options.currlevelid:2,
+      topicid:options.topicid 
     })
     console.log(options.contentArr)
   },

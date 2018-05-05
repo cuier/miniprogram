@@ -78,6 +78,7 @@ Page({
   gotoQuiz: function (e) {
     let id = e.currentTarget.id
     let curlevelid = getCurlevelid(this.data.topiclist[id].topicid, this.data.user_topic_list)
+    console.log(this.data.topiclist[id].topicid)
     wx.navigateTo({
       url: '/pages/quizePage/quizePage?contentArr=' + JSON.stringify(this.data.topiclist[id].level) + '&currlevelid=' + curlevelid + '&topicid=' + this.data.topiclist[id].topicid,
     })

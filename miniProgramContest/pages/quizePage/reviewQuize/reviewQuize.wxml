@@ -13,13 +13,13 @@
 </view>
 <view class='question-section'>
   <view class='biaoti-nOfItems-self'>第{{currId+1}}题</view>
-  <view class='title-self'>{{postList[currId].name}}</view>
+  <view class='title-self'>{{postList[currId].title}}</view>
   <scroll-view>
   <block wx:for='{{postList[currId].content}}' wx:key='content'>
     <view style='margin-left:60rpx' class="form-container" id='{{index}}' bindtap="btnOpClick">
       <image class='abcd' src='{{"/icons/quize/pic"+index+".png"}}'></image>
       <view class='contents'>{{postList[currId].content[index]}}</view>
-      <image wx:if='{{index==postList[currId].daan}}' style='width:60rpx;height:60rpx;margin-left:-60rpx' src='/icons/quize/right.png'></image>
+      <image wx:if='{{index==postList[currId].answer}}' style='width:60rpx;height:60rpx;margin-left:-60rpx' src='/icons/quize/right.png'></image>
       <image wx:elif='{{index==select}}' style='width:60rpx;height:60rpx;margin-left:-60rpx' src='/icons/quize/wrong.png'></image>
     </view>
   </block>

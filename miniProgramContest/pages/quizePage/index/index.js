@@ -63,7 +63,7 @@ var local_database = [{
 const app = getApp()
 Page(Object.assign({
   data: {
-    postList: local_database,
+    // postList: local_database,
     idx: 0,
     num: 100,
     step: null,
@@ -191,6 +191,7 @@ Page(Object.assign({
       this.setData({
         postList:res.data
       })
+      console.log(this.data.postList)
     })
   },
   goBack:function(){
@@ -201,8 +202,8 @@ Page(Object.assign({
   pushDataToReview(data, select) {
     let reviewArr = this.data.reviewArr
     reviewArr.push({
-      "name": data.name,
-      "daan": data.daan,
+      "title": data.title,
+      "answer": data.answer,
       "content": data.content,
       "selected": select
     })
