@@ -14,10 +14,11 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      isSuccess:true,
+      // isSuccess:true,
       screenWidth: app.globalData.systemInfo.screenWidth,
-      // isSuccess:optinos.isSuccess,
-      levelid:options.levelid,
+      isSuccess: options.isSuccess,
+      levelid: options.levelid,
+      reviewArr: JSON.parse(options.reviewArr) ,
     })
     if (options.isSuccess){
       this.setData({
@@ -47,7 +48,7 @@ gotoChuanguan:function(){
 },
   gotoReview:function(){
     wx.redirectTo({
-      url: '../reviewQuize/reviewQuize',
+      url: '../reviewQuize/reviewQuize?reviewArr=' + JSON.stringify(this.data.reviewArr),
     })
   },
 // share:function(){

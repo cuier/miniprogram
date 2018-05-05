@@ -1,5 +1,6 @@
 <view class='pagehead'>
   <block wx:for='{{classArr}}' wx:key='classArr'>
+  <view bindtap='chooseQuestionNum'>
     <view wx:if='{{currId==index&&item.result==1}}' class='question-button' style='background-image: url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525400352600.jpg")'>
       <text>{{item.id}}</text>
     </view>
@@ -9,17 +10,18 @@
     <view wx:else class='question-button' style='background-image: url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525400351880.jpg")'>
       <text>{{item.id}}</text>
     </view>
+    </view>
   </block>
 </view>
 <view class='question-section'>
   <view class='biaoti-nOfItems-self'>第{{currId+1}}题</view>
-  <view class='title-self'>{{postList[currId].title}}</view>
+  <view class='title-self'>{{reviewArr[currId].title}}</view>
   <scroll-view>
-  <block wx:for='{{postList[currId].content}}' wx:key='content'>
+  <block wx:for='{{reviewArr[currId].content}}' wx:key='content'>
     <view style='margin-left:60rpx' class="form-container" id='{{index}}' bindtap="btnOpClick">
       <image class='abcd' src='{{"/icons/quize/pic"+index+".png"}}'></image>
-      <view class='contents'>{{postList[currId].content[index]}}</view>
-      <image wx:if='{{index==postList[currId].answer}}' style='width:60rpx;height:60rpx;margin-left:-60rpx' src='/icons/quize/right.png'></image>
+      <view class='contents'>{{reviewArr[currId].content[index]}}</view>
+      <image wx:if='{{index==reviewArr[currId].answer}}' style='width:60rpx;height:60rpx;margin-left:-60rpx' src='/icons/quize/right.png'></image>
       <image wx:elif='{{index==select}}' style='width:60rpx;height:60rpx;margin-left:-60rpx' src='/icons/quize/wrong.png'></image>
     </view>
   </block>
