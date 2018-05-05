@@ -9,11 +9,11 @@
   <scroll-view style="height:{{goodsBg}}px;" scroll-y>
   <view class="goodsItem">
     <block wx:for="{{goods}}" wx:key="">
-      <view class="item {{index < '5' ? 'free' : 'notFree'}}" style="width:{{itemWidth}}px;Height:{{itemHeight}}px" bindtap="goodsClick">
-        <view class="title">{{index < '5' ? '免费兑换' : '金币抵扣'}} </view>
-        <view class="img"><image src="/icons/sotre/gift.png" style="width:75rpx;height:75rpx;"/></view>
+      <view class="item {{item.categoryid == '1' ? 'free' : 'notFree'}}" style="width:{{itemWidth}}px;Height:{{itemHeight}}px" data-id="{{item.goods_id}}" data-name="{{item.name}}" data-pic="{{item.pic}}" data-price="{{item.price}}" bindtap="goodsClick">
+        <view class="title">{{item.categoryid == '1' ? '免费兑换' : '金币抵扣'}} </view>
+        <view class="img"><image src="{{item.pic}}" style="width:75rpx;height:75rpx;"/></view>
         <view class="coin">
-          <text>￥100</text>
+          <text>￥{{item.price}}</text>
         </view>
       </view>
     </block>

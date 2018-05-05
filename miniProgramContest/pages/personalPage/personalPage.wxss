@@ -49,6 +49,11 @@
   right:70rpx;
   position:absolute;
 }
+.sign {
+  font-size:28rpx;
+  right:90rpx;
+  position:absolute;
+}
 
 .bottom {
   align-items: center;

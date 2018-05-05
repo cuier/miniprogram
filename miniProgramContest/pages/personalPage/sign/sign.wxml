@@ -1,0 +1,11 @@
+<view class="signBg" style="background-size:{{signBgWidth}}px;height:{{signBgHight}}px">
+  <view class="signTip" style="background-size:{{signTipWidth}}px;height:{{signTipHight}}px"></view>
+  <view class="coin">
+    <span class="left">+</span>
+    <span class="num">100</span>
+    <span class="right">金币</span>
+  </view>
+  <view class="signBt">
+    <image src="/icons/signBt.png" style="width:{{signBgWidth}}px;height:68px;"  mode="aspectFit" bindtap="sign"/>
+  </view>
+</view>

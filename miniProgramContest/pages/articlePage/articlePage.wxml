@@ -1,15 +1,14 @@
 <view class="noMove">
   <view class="swiper-tab">
     <block wx:for="{{swipertab}}" wx:key="sptab">
-      <view class="swiper-tab-list" data-current="{{item.index}}">
-        <view wx:if="{{item.isCurr}}" class="withLineView">
+      <view class="swiper-tab-list" data-current="{{item.index}}" bindtap="tabClick">
+        <view class="{{currentTab==item.index?'withLineView':''}}">
           <view class="tab-text">
             <text>{{item.name}}</text>
           </view>
-          <view class="line"></view>
-        </view>
-        <view wx:else class="tab-text">
-          <text style="color:#000">{{item.name}}</text>
+          <block wx:if="{{currentTab==item.index}}">
+            <view class="line"></view>
+          </block>
         </view>
       </view>
     </block>

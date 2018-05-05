@@ -1,0 +1,25 @@
+.signBg {
+  background-image: url("http://p7z7150ac.bkt.clouddn.com/signBg.png");
+  background-repeat:no-repeat;
+  background-position-x:center;
+  text-align:center;
+}
+.signTip {
+  background-image: url("http://p7z7150ac.bkt.clouddn.com/signTip.png");
+  background-repeat:no-repeat;
+  background-position-x:center;
+  background-position-y:80rpx;
+  padding-top:80rpx;
+  text-align:center;
+}
+.coin {
+  line-height: 220rpx;
+  font-size: 160rpx;
+  color: #ffffff;
+}
+.coin .right {
+  font-size: 48rpx;
+}
+.signBt {
+  padding-top: 60rpx;
+}

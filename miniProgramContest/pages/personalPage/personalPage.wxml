@@ -1,14 +1,21 @@
 <!-- 个人信息 -->
 <view class="personalBg" style="background-size:{{personalBgWidth}}px;height:{{personalBgHeight}}px">
   <view class="top">
-    <view class="portrait"><image  src="/icons/user@default.png" /></view>
+    <view class="portrait"><image  src="{{userInfo.avatarUrl}}" /></view>
     <view class="info">
-      <view class="nickname">张三</view>
+      <view class="nickname">{{userInfo.nickName}}</view>
       <view class="coin">
         <image src="/icons/gold-coin.png"></image><text>1200</text>
       </view>
     </view>
     <!-- <view class="switch">切换到男生版</view> -->
+    <block wx:if="{{isLogin}}">
+      <view class="sign" bindtap="sign" hidden="{{!isSign}}">签到</view>
+      <view class="sign" hidden="{{isSign}}">已签到</view>
+    </block>
+    <block wx:else>
+      <view class="sign" bindtap="onLogin">登录</view>
+    </block>
   </view>
   <view class="bottom">
     <view class="subject">

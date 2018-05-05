@@ -14,7 +14,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    let goods_id = options.goods_id;
+    let name = options.name;
+    let pic = decodeURIComponent(options.pic);
+    let price = options.price;
+    this.setData({
+      goods_id: goods_id,
+      name: name,
+      pic: pic,
+      price: price
+    })
   },
 
 })

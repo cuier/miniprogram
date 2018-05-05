@@ -22,6 +22,7 @@ Page({
   data: {
     swipertab: $swipertab,
     articleArr: articleArr,
+    currentTab: 0, //默认从第一个开始
   },
 
   /**
@@ -60,6 +61,21 @@ Page({
   onShareAppMessage: function () {
   
   },
+
+  /**
+   * 顶部TAB切换
+   */
+  tabClick: function(e) {
+    let current = e.currentTarget.dataset.current
+    if (this.data.currentTab == current) {
+      return false;
+    } else {
+      this.setData({
+        currentTab: current
+      })
+    }
+  },
+
   gotoDetail:function(e){
 
     let id = e.currentTarget.id

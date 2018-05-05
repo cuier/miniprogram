@@ -10,7 +10,8 @@
     "pages/debug/test",
     "pages/sotrePage/sotrePage",
     "pages/sotrePage/sotreDetail/sotreDetail",
-    "pages/personalPage/personalPage"
+    "pages/personalPage/personalPage",
+    "pages/personalPage/sign/sign"
     
   ],
   "window": {
