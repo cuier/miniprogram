@@ -6,8 +6,9 @@ import debugUtil from '../../../utils/debugUtil'
 import *as sensorUtil from '../../../utils/sensorUtil'
 import *as constants from '../../../code/constants.js'
 import circleProgress from '../../../commonView/circleProgress/circleProgress.js'
-import { Base } from '../../../utils/base.js'
-var base = new Base()
+import{Index} from './index-model.js'
+var index = new Index()
+
 // var wrongNum = 0
 var local_database = [{
   "name": "‘收取关山五十州’上句是什么？",
@@ -186,22 +187,11 @@ Page(Object.assign({
 
   },
   requestPostList: function (topicid, levelid) {
-    var allParams = {
-      url: '/Api/Question/list',
-      data: { topicid: topicid, levelid: levelid },
-    };
-    base.request(allParams, (res) => {
-      if (res.retCode == '0000') {
-        //网络请求返回金币数量和等级
-        this.setData({
-          postList:res.data
-        })
-      }
-      else{
-        //请求失败  不处理
-      }
-
-    });
+    index.requestPostList(topicid,levelid,(res)=>{
+      this.setData({
+        postList:res.data
+      })
+    })
   },
   goBack:function(){
     wx.navigateBack({

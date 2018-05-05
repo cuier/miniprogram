@@ -54,11 +54,11 @@ class Base {
           if (code != '200') {
             console.log(noRefetch);
             if (!noRefetch) {
-              that._refetch(params);
+              that._refetch(params,cb);
             }
           }
           that._processError(res);
-          params.eCallback && params.eCallback(res.data);
+          // params.eCallback && params.eCallback(res.data);
         }
       },
       fail: function (err) {
@@ -77,7 +77,7 @@ class Base {
     // })
   }
 
-  _refetch(param) {
+  _refetch(param,cb) {
     var token = new Token();
     token.getTokenFromServer((token) => {
       this.request(param,cb, true);

@@ -74,10 +74,10 @@ Page({
     })
   },
   gotoQuiz: function (e) {
-    let topicid = e.currentTarget.id
-    let userInfo = this.data.userInfo ? this.data.userInfo : {}
+    let id = e.currentTarget.id
+    let curlevelid = getCurlevelid(this.data.topiclist[id].topicid, this.data.user_topic_list)
     wx.navigateTo({
-      url: '/pages/quizePage/quizePage?topicid=' + topicid + '&gender=' + userInfo.gender,
+      url: '/pages/quizePage/quizePage?contentArr=' + JSON.stringify(this.data.topiclist[id].level) + '&currlevelid=' + curlevelid + '&topicid=' + this.data.topiclist[id].topicid,
     })
   },
   gotoArticle: function () {
@@ -91,3 +91,11 @@ Page({
     })
   },
 })
+
+function getCurlevelid(topicid,levelist){
+  for (let item of levelist) {
+    if (topicid == item.topic_id) {
+      return item.level_id
+    }
+  }
+}
