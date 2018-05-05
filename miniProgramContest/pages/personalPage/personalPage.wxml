@@ -8,7 +8,7 @@
         <image src="/icons/gold-coin.png"></image><text>1200</text>
       </view>
     </view>
-    <view class="switch">切换到男生版</view>
+    <!-- <view class="switch">切换到男生版</view> -->
   </view>
   <view class="bottom">
     <view class="subject">
