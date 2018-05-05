@@ -18,6 +18,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var gender = 1;
+    var param = {
+      url: 'Api/Topic/list',
+      type: 'post',
+      data: { gender: gender },
+      sCallback: function (data) {
+        callback && callback(data);
+      }
+    };
+    base.request(param); return;
     this._getUserInfo((data) => {
       this.setData({
         userInfo: data
@@ -30,7 +40,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this._updateUserInfo()
+    // this._updateUserInfo()
   },
 
   /**
@@ -82,7 +92,7 @@ Page({
           success: (res) => {
             typeof cb == "function" && cb(res.userInfo);
             // if (!this.onPay) {
-            //   this._updateUserInfo(res.userInfo)
+              this._updateUserInfo(res.userInfo)
             // }
           },
           fail: (res) => {

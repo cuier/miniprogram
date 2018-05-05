@@ -1,54 +1,57 @@
 import *as constants from '../code/constants.js'
 import umfLog from '../utils/umfLog.js'
 
-class token {
+class Token {
   constructor() {
-    this.verifyUrl = constants.url + 'token/verify'
-    this.tokenUrl = constants.url + 'token/user'
+    this.verifyUrl = constants.url + 'Token/verifyToken'
+    this.tokenUrl = constants.url + 'Token/getToken'
   }
 
   verify() {
     let token = wx.getStorageSync('token')
-    if(!token){
+    if (!token) {
       this.getTokenFromServer()
-    }else{
+    } else {
       this._verifyFromServer()
     }
   }
 
-  _verifyFromServer(token){
+  _veirfyFromServer(token) {
+    var that = this;
     wx.request({
-      url: this.verifyUrl,
+      url: that.verifyUrl,
       method: 'POST',
-      data:{
+      header: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      data: {
         token: token
       },
-      success:(res)=>{
-        let valid = res.data.isValid
-        if(!valid){
-          this.getTokenFromServer()
+      success: function (res) {
+        var valid = res.data.isValid;
+        if (!valid) {
+          that.getTokenFromServer();
         }
       }
     })
   }
 
-  getTokenFromServer(callBack){
+  getTokenFromServer(callBack) {
+    var that = this;
     wx.login({
-      success:(res)=>{
-        umfLog.log(this.tokenUrl)
+      success: function (res) {
         wx.request({
-          url: this.tokenUrl,
+          url: that.tokenUrl,
           method: 'POST',
+          header: {
+            "Content-Type": "application/x-www-form-urlencoded"
+          },
           data: {
-            code:res.code
+            code: res.code,
           },
-          success:(res)=>{
-            umfLog.log(res)
-            wx.setStorageSync('token', res.data.token)
-            callBack&&callBack(res.data.token)
-          },
-          fail:(res)=>{
-            umfLog.error(res)
+          success: function (res) {
+            wx.setStorageSync('token', res.data.data.token);
+            callBack && callBack(res.data.token);
           }
         })
       }
@@ -56,4 +59,4 @@ class token {
   }
 }
 
-export {token}
+export {Token}

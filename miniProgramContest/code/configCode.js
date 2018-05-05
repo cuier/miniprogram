@@ -4,11 +4,11 @@
  */
 //设置环境 ,生产需要设置为 3
 // 0:develep 1:test 2:uat 3 release
-let _ENV = 3;
+let _ENV = 0;
 
 const urls = [
   //开发地址
-  { name: '开发环境', value: "0", url: "http://baidu.com/" ,},
+  { name: '开发环境', value: "0", url: "https://fanqietotop.cn/Api/" ,},
   //测试地址
   { name: '测试环境', value: "1", url: "http://10.10.178.107:8080/umfWeChatPlat", },
   //UAT地址
