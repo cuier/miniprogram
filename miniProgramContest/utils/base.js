@@ -12,7 +12,7 @@ class Base {
   //http 请求类, 当noRefech为true时，不做未授权重试机制
   request(params, cb,noRefetch = false) {
     var that = this;
-    var url = "https://fanqietotop.cn/" + params.url;
+    var url = "https://fanqietotop.cn/api/" + params.url;
     // if (!params.type) {
     //   params.type = 'get';
     // }
