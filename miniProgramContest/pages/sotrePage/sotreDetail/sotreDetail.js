@@ -18,11 +18,15 @@ Page({
     let name = options.name;
     let pic = decodeURIComponent(options.pic);
     let price = options.price;
+    let can_exchange = options.can_exchange;
+    let topciname = options.topciname;
     this.setData({
       goods_id: goods_id,
       name: name,
       pic: pic,
-      price: price
+      price: price,
+      topciname: topciname,
+      can_exchange: can_exchange
     })
   },
 
