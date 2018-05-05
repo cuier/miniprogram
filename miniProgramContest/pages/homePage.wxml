@@ -10,7 +10,7 @@
   </view>
   <view class='content'>
     <view id='0' class='section1 border' bindtap='gotoQuiz'>
-      <text style='margin-left:60rpx'>健康常识闯关</text>
+      <text style='margin-left:60rpx;white-space:nowrap '>健康常识闯关</text>
       <image style='width:125px;height:150px;padding-bottom:130rpx;margin-left:40rpx' src='/icons/trophy.png'></image>
     </view>
     <view class='section2'>

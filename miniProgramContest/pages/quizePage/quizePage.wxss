@@ -21,6 +21,7 @@
   align-items: center;
   margin:  38rpx 20rpx 20rpx 20rpx;
   background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .content-self{
@@ -48,6 +49,7 @@
   justify-content: center;
   background-image: url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525182309892.jpg");
   background-repeat:no-repeat;
+  background-size: contain;
 }
 
 .pageFooter{

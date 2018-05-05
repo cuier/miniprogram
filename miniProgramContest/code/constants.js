@@ -12,6 +12,8 @@ module.exports = Object.assign({
   onPay:true,//是否启用支付
   //---------------------Interfaces---------------
   interfaces: {
+    FUNC_USERINFO:'',//通过code和用户信息获取金币，等级和主题level
+    
     //------------------模块1--------------------
     //interface1
     FUNC_INTERFACE1: '/../interface1',
