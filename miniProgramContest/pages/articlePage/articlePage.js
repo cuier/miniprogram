@@ -7,13 +7,7 @@ const $swipertab = [
     { name: '宝宝', index: 1, isCurr: false, },
     { name: '瘦身', index: 2, isCurr: false, },
     { name: '恋爱', index: 3, isCurr: false, },];
-const articleArr = [
-    { imgUrl: '/icons/article.png', title: '1岁宝宝不能吃什么？', flag: '1', readNum: '800' },
-    { imgUrl: '/icons/article.png', title: '1岁宝宝不能吃什么？', flag: '1', readNum: '800' },
-    { imgUrl: '/icons/article.png', title: '1岁宝宝不能吃什么？', flag: '1', readNum: '800' },
-    { imgUrl: '/icons/article.png', title: '1岁宝宝不能吃什么？', flag: '1', readNum: '800' },
-    { imgUrl: '/icons/article.png', title: '1岁宝宝不能吃什么？', flag: '1', readNum: '800' },
-]
+
 Page({
 
     /**
@@ -79,23 +73,25 @@ Page({
      */
     tabClick: function (e) {
         let current = e.currentTarget.dataset.current
+        let id = e.currentTarget.dataset.id;
+        articlepage.getArticleList((res) => {
+          this.setData({
+            articleArr: res
+          });
+        }, id);
         if (this.data.currentTab == current) {
             return false;
         } else {
             this.setData({
-                currentTab: current
+                currentTab: current,
             })
         }
+        
     },
 
     onPostTap: function(e){
         var that = this;
-        let id = e.currentTarget.dataset.id;
-        articlepage.getArticleList((res) => {
-            that.setData({
-                articleArr: res
-            });
-        }, id);
+        
     },
 
     gotoDetail: function (e) {

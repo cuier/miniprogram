@@ -1,9 +1,9 @@
 <view class="noMove">
   <view class="swiper-tab">
     <block wx:for="{{swipertab}}" wx:key="sptab">
-      <view class="swiper-tab-list" data-current="{{item.index}}" catchtap="tabClick">
+      <view class="swiper-tab-list"  data-id="{{item.id}}" data-current="{{item.index}}" catchtap="tabClick">
         <view class="{{currentTab==item.index?'withLineView':''}}">
-          <view class="tab-text" catchtap="onPostTap" data-id="{{item.id}}">
+          <view class="tab-text" >
             <text>{{item.name}}</text>
           </view>
           <block wx:if="{{currentTab==item.index}}">
