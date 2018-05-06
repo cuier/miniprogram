@@ -1,7 +1,7 @@
 <!--pages/quizePage/quizeResult/quizeResult.wxml-->
 <view class="modal-mask" catchtouchmove="preventTouchMove">
 </view>
-<view class="modal-dialog" wx:if="{{isSuccess}}" scroll-y>
+<view class="modal-dialog" wx:if="{{isSuccess==1}}" scroll-y>
   <view class="modal-success" style='width:{{0.8*screenWidth}}px;'>
     <text style='margin-top:30rpx;'>恭 喜 你</text>
     <text style='font-size:60rpx;margin-top:-50rpx;'>闯 关 成 功!</text>

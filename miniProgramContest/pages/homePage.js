@@ -21,6 +21,7 @@ Page({
         userInfo: data,
       });
     });
+    this.requestLevelName()
   },
 
   /**
@@ -68,7 +69,18 @@ Page({
       })
     });
   },
-
+//获取等级名称
+  requestLevelName:function(){
+    var allParams = {
+      type: 'post',
+      url: '/user/getUserMaxLevel',
+      }
+    base.request(allParams,(res)=>{
+      this.setData({
+        levelName: res.data.levelname
+      })
+    })
+  },
 
   gotoMyPage: function (e) {
     wx.navigateTo({

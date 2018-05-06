@@ -36,7 +36,7 @@
   background-image: url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525182309799.jpg");
   background-color: #FBEFE0;
    width: 90%;
-   height: 1000rpx;
+   /* height: 1000rpx; */
    margin: 4%;
     border-radius: 30rpx;
   border-width: thick;
@@ -50,9 +50,9 @@
   justify-content: center;
   height: 100rpx;
   width: 300rpx;
-  /* margin-left:150rpx; */
-   margin-top: 30rpx; 
+  margin-top: 30rpx; 
   background-repeat:no-repeat;
+  background-size: contain;
   background-image: url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525228788258.jpg")
 }
 

@@ -28,7 +28,7 @@ Page(Object.assign({
     var select = e.currentTarget.id;
     var jieg = this.data.postList[this.data.idx].answer;
     this.setData({
-      select: select,
+      select: parseInt(select) ,
       isResult: true,
       // stopInterval:true,
     })

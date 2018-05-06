@@ -5,11 +5,11 @@
   position: fixed;
   top: 120rpx; 
   height: 860rpx;
-  left: 0;
-  right: 0; 
+  left: 60rpx;
+  right: 60rpx; 
   z-index: 9999;
-  margin: 40rpx 30rpx 20rpx 54rpx ;  
   background-repeat: no-repeat;
+  background-size: contain;
   background-image: url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525182309329.jpg")
 }
 

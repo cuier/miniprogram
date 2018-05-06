@@ -19,10 +19,14 @@ Page({
     this.setData({
       reviewArr: JSON.parse(options.reviewArr)
     })
+    console.log(this.data.reviewArr)
   },
 
   chooseQuestionNum:function(e){
-    
+    let id = e.currentTarget.id
+    this.setData({
+      currId: parseInt(id) -1
+    })
   },
   /**
    * 用户点击右上角分享

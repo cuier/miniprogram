@@ -3,7 +3,7 @@
     <image class='image-user' src="{{userInfo.avatarUrl}}"></image>
     <view>
       <text class="name">{{userInfo.nickName}}</text>
-      <text class="name">等级：{{'暂无'}}{{levelid}}</text>
+      <text class="name">等级:{{levelName}}</text>
     </view>
     <image style='margin-bottom: 60rpx' class='image-self' src='/icons/gold-coin.png'></image>
     <text style='margin-bottom: 60rpx'>{{goldcoin}}</text>

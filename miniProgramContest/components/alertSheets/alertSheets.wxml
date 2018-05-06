@@ -7,6 +7,6 @@
       <image class='giftImage' src='/icons/quize/gift.png'></image>
       <image bindtap='{{onCancel}}' class='closeImg' src='/icons/quize/close.png'></image>
     </view>
-    
+
   </view>
 </template>
