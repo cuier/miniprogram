@@ -63,27 +63,28 @@
   border-radius: 20rpx;
   background-color: white;
   height: 240rpx;
-  margin: 20rpx 60rpx 10rpx 0rpx;
+  margin: 20rpx 0rpx 10rpx 0rpx;
   justify-content: flex-start;
   align-items: center;
 }
 
 .content-container image{
   height: 164rpx;
-  width: 172rpx
+  width: 210rpx;
+  margin-left: 30rpx;
 }
 
 .content-right{
   display: flex;
   flex-direction: column;
-   margin-left: 80rpx; 
-  /* align-content: space-between;
-  justify-content: space-between; */
+   margin-left: 60rpx; 
+   /* align-content: space-around; */
+   /* justify-content: space-around;   */
 }
 
 .content-footer{
   padding-right: 30rpx;
-  margin-top: 100rpx;
+   margin-top: 60rpx; 
   display: flex;
   flex-direction: row;
   justify-content: space-between;

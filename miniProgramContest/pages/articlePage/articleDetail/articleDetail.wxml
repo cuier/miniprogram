@@ -3,7 +3,7 @@
     <image src='{{pic}}'></image>
     <text class='title'>{{title}}</text>
     <view class='content-footer'>
-      <text>{{tag}}</text>
+    <view class='tag'><text>{{tag}}</text></view> 
       <text wx:if="{{read != 0}}">{{read}}</text>
     </view>
     <rich-text adjust-position> {{content}}</rich-text>
