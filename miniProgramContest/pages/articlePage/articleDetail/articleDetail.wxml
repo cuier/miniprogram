@@ -1,10 +1,10 @@
 <view class='container'>
   <view class='content'>
-    <image src='/icons/article/timg.png'></image>
-    <text class='title'>1岁宝宝不能吃什么？{{}}</text>
+    <image src='{{pic}}'></image>
+    <text class='title'>{{title}}</text>
     <view class='content-footer'>
-      <text>标签1</text>
-      <text>阅读：800</text>
+      <text>{{tag}}</text>
+      <text wx:if="{{read != 0}}">{{read}}</text>
     </view>
     <rich-text adjust-position> {{content}}</rich-text>
   </view>
