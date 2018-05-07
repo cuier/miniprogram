@@ -1,71 +1,64 @@
 <!-- 个人信息 -->
 <view class="personalBg" style="background-size:{{personalBgWidth}}px;height:{{personalBgHeight}}px">
-  <view class="top">
-    <view class="portrait"><image  src="{{userInfo.avatarUrl}}" /></view>
-    <view class="info">
-      <view class="nickname">{{userInfo.nickName}}</view>
-      <view class="coin">
-        <image src="/icons/gold-coin.png"></image><text>{{money}}</text>
-      </view>
+    <view class="top">
+        <view class="portrait">
+            <image src="{{userInfo.avatarUrl}}" />
+        </view>
+        <view class="info">
+            <view class="nickname">{{userInfo.nickName}}</view>
+            <view class="coin">
+                <image src="/icons/gold-coin.png"></image>
+                <text> {{money}}</text>
+            </view>
+        </view>
+        <!-- <view class="switch">切换到男生版</view> -->
+        <block wx:if="{{isLogin}}">
+            <view class="sign" bindtap="sign" hidden="{{!isSign}}">签到</view>
+            <view class="sign" hidden="{{isSign}}">已签到</view>
+        </block>
+        <block wx:else>
+            <view class="sign" bindtap="onLogin">登录</view>
+        </block>
     </view>
-    <!-- <view class="switch">切换到男生版</view> -->
-    <block wx:if="{{isLogin}}">
-      <view class="sign" bindtap="sign" hidden="{{!isSign}}">签到</view>
-      <view class="sign" hidden="{{isSign}}">已签到</view>
-    </block>
-    <block wx:else>
-      <view class="sign" bindtap="onLogin">登录</view>
-    </block>
-  </view>
-  <view class="bottom">
-    <view class="subject">
-      <view class="num">0</view>
-      <view class="desc">题目收藏</view>
+    <view class="bottom">
+        <view class="subject">
+            <view class="num">{{question_count}}</view>
+            <view class="desc">题目收藏</view>
+        </view>
+        <view class="line">
+            <image src="/icons/sLine.png" style="width:4px;height:30px;" />
+        </view>
+        <view class="article">
+            <view class="num">{{article_count}}</view>
+            <view class="desc">文章收藏</view>
+        </view>
     </view>
-    <view class="line"><image src="/icons/sLine.png" style="width:4px;height:30px;"/></view>
-    <view class="article">
-      <view class="num">5</view>
-      <view class="desc">文章收藏</view>
-    </view>
-  </view>
 </view>
 
 <!-- 主题 -->
 <view style="width:{{themeBgWidth}}px;padding:0 15px;">
-  <view class="theme" style="height:{{themeBgHieght}}px;margin-top:0;">
-    <view class="li pl20">
-      <view class="title">主题1: 健康常识挑战</view>
-      <view class="grade">等级：暂无</view>
+    <block wx:for="{{user_topic_list}}" wx:for-index="idx">
+    <view class="theme" style="height:{{themeBgHieght}}px;margin-top:0;" bindtap='gotoQuiz' data-topicid="{{item.topic_id}}" data-levelid="{{item.level_id}}">
+        <view class="li pl20">
+            <view class="title">主题{{idx+1}}: {{item.topic_name}}</view>
+            <view class="grade">等级：暂无</view>
+        </view>
+        <view class="challenge pr20">
+            <view>去查看</view>
+        </view>
     </view>
-    <view class="challenge pr20">
-      <view>去挑战</view>
+    </block>
+    <block wx:for="{{remind_topic}}" wx:for-index="idx">
+    <view class="theme" style="height:{{themeBgHieght}}px;margin-top:0;" bindtap='gotoQuiz' data-topicid="{{item.topic_id}}">
+        <view class="li pl20">
+            <view class="title">主题{{idx}}: {{item.topic_name}}</view>
+            <view class="grade">等级：暂无</view>
+        </view>
+        <view class="challenge pr20">
+            <view>去挑战</view>
+        </view>
     </view>
-  </view>
-  <view class="theme" style="height:{{themeBgHieght}}px;">
-    <view class="li pl20">
-      <view class="title">主题2: 超人妈妈</view>
-      <view class="grade">等级：初级妈妈</view>
-    </view>
-    <view class="challenge pr20">
-      <view>查看</view>
-    </view>
-  </view>
-  <view class="theme" style="height:{{themeBgHieght}}px;">
-    <view class="li pl20">
-      <view class="title">主题3: 贴心女神</view>
-      <view class="grade">等级：暂无</view>
-    </view>
-    <view class="challenge pr20">
-      <view>去挑战</view>
-    </view>
-  </view>
-  <view class="theme" style="height:{{themeBgHieght}}px;">
-    <view class="li pl20">
-      <view class="title">主题4: 我要变瘦</view>
-      <view class="grade">等级：暂无</view>
-    </view>
-    <view class="challenge pr20">
-      <view>去挑战</view>
-    </view>
-  </view>
+    </block>
+
+    
 </view>

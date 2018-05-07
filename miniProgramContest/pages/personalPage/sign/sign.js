@@ -1,5 +1,7 @@
 import { Base } from '../../../utils/base.js'
-var base = new Base()
+import { Sign } from './sign-model.js'
+var sign = new Sign()
+
 const sysWidth = wx.getSystemInfoSync().windowWidth
 const sysHight = wx.getSystemInfoSync().windowHeight
 
@@ -42,6 +44,7 @@ Page({
     const cur_day = date.getDate();
     var date_str = cur_year + '-' + (cur_month < 10 ? '0' + cur_month : cur_month) + '-' + (cur_day < 10 ? '0' + cur_day : cur_day);
     wx.setStorageSync("signTime", date_str)
+
     
     var allParams = {
       type: 'post',
