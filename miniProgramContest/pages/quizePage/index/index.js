@@ -30,12 +30,11 @@ Page(Object.assign({
     this.setData({
       select: parseInt(select) ,
       isResult: true,
-      // stopInterval:true,
     })
     if (select != jieg) {
       this.dealWrong(select)
     }
-    else if (this.data.idx < this.data.postList.length - 1) {
+    else if (this.data.rightNum < 7) {
       this.pushDataToReview(this.data.postList[this.data.idx],select)
       
       this.setData({
@@ -58,13 +57,17 @@ Page(Object.assign({
         rightNum: this.data.rightNum + 1
       })
       //闯关成功
+      wx.setStorageSync('reviewArr', this.data.reviewArr)
       wx.redirectTo({
-        url: '../quizeResult/quizeResult?isSuccess=1?levelid=' + this.data.levelid + '&topicid=' + this.data.topicid + '&reviewArr=' + JSON.stringify(this.data.reviewArr),//闯关成功界面进行加一
+        url: '../quizeResult/quizeResult?isSuccess=1&levelid=' + this.data.levelid + '&topicid=' + this.data.topicid ,//闯关成功界面进行加一
       })
     }
 
   },
   onShow: function (options) {
+    circleProgress.drawCircleBg(35, 10)
+    // 绘制圆环
+    this.stepInterval()
     //调试代码，打开摇一摇进入调试页面
     if (debugUtil.isDebug()) {
       wx.onAccelerometerChange(res => {
@@ -97,20 +100,18 @@ Page(Object.assign({
     // 获得circle组件
     // this.circle = this.selectComponent("#circle");
     // 绘制背景圆环
-    circleProgress.drawCircleBg(35, 10)
-    // 绘制圆环
-    this.stepInterval()
+   
   },
 
   dealWrong(select) {
-    
+    this.pushDataToReview(this.data.postList[this.data.idx], select)
     this.setData({
       wrongNum: this.data.wrongNum + 1,
       stopInterval: true,
     })
 
-    if (this.data.wrongNum < 2) {
-      this.pushDataToReview(this.data.postList[this.data.idx], select)
+    if (this.data.wrongNum < 3) {
+      // this.pushDataToReview(this.data.postList[this.data.idx], select)
       setTimeout(() => {
         // this.stepInterval()
         this.setData({
@@ -122,15 +123,16 @@ Page(Object.assign({
         })
       }, 2000)
     } else {
-      this.pushDataToReview(this.data.postList[this.data.idx], select)
+      
       clearInterval(this.stepTimer)
       this.setData({
         isResult: true,
         stopInterval: true,
       })
+      wx.setStorageSync('reviewArr', this.data.reviewArr)
       //闯关失败
       wx.redirectTo({
-        url: '../quizeResult/quizeResult?isSuccess=0&reviewArr=' + JSON.stringify(this.data.reviewArr),
+        url: '../quizeResult/quizeResult?isSuccess=0&levelid=' + this.data.levelid + '&topicid=' + this.data.topicid,
       })
     }
 
@@ -151,6 +153,7 @@ Page(Object.assign({
   pushDataToReview(data, select) {
     let reviewArr = this.data.reviewArr
     reviewArr.push({
+      "question_id": data.question_id,
       "title": data.title,
       "answer": data.answer,
       "content": data.content,

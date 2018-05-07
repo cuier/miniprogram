@@ -4,8 +4,8 @@
   <view class='page_section1' style='height: 524rpx; ' catchtap="catchtap">
     <view class="content-self">
       <block wx:for="{{contentArr}}" wx:key="contentArr">
-        <view class="item-button" style='background-image: url({{index>=curlevelid?"http://weiyinyue.music.sina.com.cn/movie_still/176848_1525182308372.jpg":"http://weiyinyue.music.sina.com.cn/movie_still/176848_1525182309220.jpg"}});' id="{{item.code}}" bindtap='chooseState'>
-          <text wx:if='{{index<curlevelid}}' >{{index+1}}</text>
+        <view class="item-button" style='background-image: url({{index+currlowestlevelid>curlevelid?"http://weiyinyue.music.sina.com.cn/movie_still/176848_1525182308372.jpg":"http://weiyinyue.music.sina.com.cn/movie_still/176848_1525182309220.jpg"}});' id="{{item.code}}" bindtap='chooseState'>
+          <text wx:if='{{index+currlowestlevelid<=curlevelid}}' >{{index+1}}</text>
           <text style='padding-bottom:30rpx;margin-top:46rpx'>{{item.name}}</text>
         </view>
       </block>
@@ -16,9 +16,9 @@
 
   <view class='page_section1' style='height: 362rpx;margin-bottom:30rpx '>
     <view style="display: flex; align-items: center">
-      <text class='tip_content'>一共10题，答对8题\n才能闯关成功</text>
+      <text class='tip_content'>{{currlowestlevelid+5==curlevelid?"恭喜你\n已获得最高等级":"一共10题，答对8题\n才能闯关成功"}}</text>
     </view>
-    <view class='chuangguan' bindtap='gotoQuize'>开始闯关</view>
+    <view wx:if='{{currlowestlevelid+5>curlevelid}}' class='chuangguan' bindtap='gotoQuize'>开始闯关</view>
 
   </view>
   <view class='pageFooter'>

@@ -177,7 +177,7 @@ ex.
 }
 /**共有金币样式*/
 .image-self {
-  margin-left: 120rpx;
+  margin-left: 80rpx;
   height: 60rpx;
   width: 60rpx;
 }

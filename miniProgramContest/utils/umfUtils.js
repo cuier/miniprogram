@@ -82,3 +82,17 @@ export function getStorageSync(key){
   }catch (e){}
   return ''
 }
+
+export function shareApp(){
+
+  return {
+    title: '健康守护神',
+    path: '/page/homePage',
+    success: function (res) {
+      // 转发成功
+    },
+    fail: function (res) {
+      // 转发失败
+    }
+  }
+}

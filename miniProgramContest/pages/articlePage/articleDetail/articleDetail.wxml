@@ -3,15 +3,21 @@
     <image src='{{pic}}'></image>
     <text class='title'>{{title}}</text>
     <view class='content-footer'>
-    <view class='tag'><text>{{tag}}</text></view> 
+      <view class='tag'>
+        <text>{{tag}}</text>
+      </view>
       <text wx:if="{{read != 0}}">{{read}}</text>
     </view>
     <rich-text adjust-position> {{content}}</rich-text>
   </view>
 </view>
 <view class='pageFooter'>
-    <image src='/icons/article/star.png'></image>
+  <view bindtap='collect' data-current='{{article_id}}'>
+    <image src='{{isCollect==1?"/icons/article/star-slected.png":"/icons/article/star.png"}}'></image>
     <text>收藏</text>
+  </view>
+  <view bindtap='share'>
     <image src='/icons/article/share.png'></image>
     <text>分享</text>
   </view>
+</view>

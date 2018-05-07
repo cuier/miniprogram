@@ -44,6 +44,7 @@
   margin-left:150rpx;
   margin-top: -40rpx;
   background-repeat:no-repeat;
+  background-size: contain;
   background-image: url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525228788258.jpg")
 }
 .title{

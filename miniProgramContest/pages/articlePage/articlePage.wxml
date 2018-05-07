@@ -18,7 +18,7 @@
 
 <view class='container' style='margin-top:150rpx'>
   <block wx:for='{{articleArr}}' wx:key='article'>
-    <view id='{{item.flag}}' catchtap='gotoDetail' data-content="{{item.content_new}}" data-tag="{{item.tag}}" data-title="{{item.title}}" data-read="{{item.read_num}}" data-pic="{{item.pic}}" class='content-container'>
+    <view id='{{item.flag}}' catchtap='gotoDetail' data-content="{{item.content_new}}" data-tag="{{item.tag}}" data-title="{{item.title}}" data-read="{{item.read_num}}" data-pic="{{item.pic}}" data-articleid="{{item.article_id}}" class='content-container'>
       <image src='{{item.pic}}'></image>
       <view class='content-right'>
         <text>{{item.title}}</text>

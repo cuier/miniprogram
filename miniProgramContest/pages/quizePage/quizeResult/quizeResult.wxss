@@ -1,6 +1,9 @@
 /* pages/quizePage/quizeResult/quizeResult.wxss */
 
 /* @import '../../../components/alertSheets/alertSheets.wxss'; */
+page{
+  background-size: contain;
+}
 
 .modal-dialog {
   position: fixed;
@@ -15,6 +18,7 @@
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
+  background-size: contain;
 }
 
 .modal-success {
@@ -56,6 +60,7 @@
   justify-content: center;
   align-items: center;
   background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .reLook {
@@ -66,6 +71,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-size: contain;
 }
 .pageFooter{
   display: flex;
@@ -74,7 +80,8 @@
   align-items: center;
   align-content: center;
   width: 100%;
-  font-size: 32rpx
+  font-size: 32rpx;
+  background-size: contain;
 }
 
 .footer-self{
@@ -91,5 +98,6 @@
   width: 150rpx;
   border-radius: 55rpx;
   background-color: #262c78;
+  background-size: contain;
   background-image:url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525256758108.jpg");
 }
