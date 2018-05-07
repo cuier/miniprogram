@@ -35,6 +35,19 @@ class Personalpage extends Base {
         });
     }
 
+    //用户信息
+    getInfoList(cb, gender) {
+        var allParams = {
+            type: 'post',
+            url: 'user/getInfoList',
+            data: {gender: gender},
+        };
+        this.request(allParams, (res) => {
+            // //网络请求返回金币数量和等级
+            cb && cb(res.data)
+        });
+    }
+
 }
 
 export { Personalpage }
