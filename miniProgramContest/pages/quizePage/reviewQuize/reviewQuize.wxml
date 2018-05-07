@@ -1,15 +1,15 @@
 <view class='pagehead'>
   <block wx:for='{{classArr}}' wx:key='classArr'>
-  <view bindtap='chooseQuestionNum' id='{{item.id}}' wx:if="{{reviewArr.length>index}}">
-    <view wx:if='{{currId==index&&reviewArr[currId].selected==reviewArr[currId].answer}}' class='question-button' style='background-image: url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525400352600.jpg")'>
-      <text>{{item.id}}</text>
-    </view>
-    <view wx:elif='{{currId==index&&reviewArr[currId].selected!=reviewArr[currId].answer}}' class='question-button ' style='background-image: url( "http://weiyinyue.music.sina.com.cn/movie_still/176848_1525400351229.jpg")'>
-      <text>{{item.id}}</text>
-    </view>
-    <view wx:else class='question-button' style='background-image: url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525400351880.jpg")'>
-      <text>{{item.id}}</text>
-    </view>
+    <view bindtap='chooseQuestionNum' id='{{item.id}}' wx:if="{{reviewArr.length>index}}">
+      <view wx:if='{{currId==index&&reviewArr[currId].selected==reviewArr[currId].answer}}' class='question-button' style='background-image: url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525400352600.jpg")'>
+        <text>{{item.id}}</text>
+      </view>
+      <view wx:elif='{{currId==index&&reviewArr[currId].selected!=reviewArr[currId].answer}}' class='question-button ' style='background-image: url( "http://weiyinyue.music.sina.com.cn/movie_still/176848_1525400351229.jpg")'>
+        <text>{{item.id}}</text>
+      </view>
+      <view wx:else class='question-button' style='background-image: url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525400351880.jpg")'>
+        <text>{{item.id}}</text>
+      </view>
     </view>
   </block>
 </view>
@@ -17,22 +17,27 @@
   <view class='biaoti-nOfItems-self'>第{{currId+1}}题</view>
   <view class='title-self'>{{reviewArr[currId].title}}</view>
   <scroll-view>
-  <block wx:for='{{reviewArr[currId].content}}' wx:key='content'>
-    <view style='margin-left:60rpx' class="form-container" id='{{index}}' bindtap="btnOpClick">
-      <image class='abcd' src='{{"/icons/quize/pic"+index+".png"}}'></image>
-      <view class='contents'>{{reviewArr[currId].content[index]}}</view>
-      <image wx:if='{{index==reviewArr[currId].answer}}' style='width:60rpx;height:60rpx;margin-left:-60rpx' src='/icons/quize/right.png'></image>
-      <image wx:elif='{{index==reviewArr[currId].selected}}' style='width:60rpx;height:60rpx;margin-left:-60rpx' src='/icons/quize/wrong.png'></image>
-    </view>
-  </block>
+    <block wx:for='{{reviewArr[currId].content}}' wx:key='content'>
+      <view style='margin-left:60rpx' class="form-container" id='{{index}}' bindtap="btnOpClick">
+        <image class='abcd' src='{{"/icons/quize/pic"+index+".png"}}'></image>
+        <view class='contents'>{{reviewArr[currId].content[index]}}</view>
+        <image wx:if='{{index==reviewArr[currId].answer}}' style='width:60rpx;height:60rpx;margin-left:-60rpx' src='/icons/quize/right.png'></image>
+        <image wx:elif='{{index==reviewArr[currId].selected}}' style='width:60rpx;height:60rpx;margin-left:-60rpx' src='/icons/quize/wrong.png'></image>
+      </view>
+    </block>
   </scroll-view>
   <view style=''>
-  <text>解释：\n{{reviewArr[currId].explain}}</text></view>
+    <text>解释：\n{{reviewArr[currId].explain}}</text>
+  </view>
 </view>
 
 <view class='pageFooter'>
-    <image src='/icons/article/star.png'></image>
-    <text>收藏</text>
+  <view bindtap='collect' data-current='{{reviewArr[currId].question_id}}'>
+    <image src='{{isCollect==1?"/icons/article/star-slected.png":"/icons/article/star.png"}}'></image>
+    <text >收藏</text>
+  </view>
+  <view  bindtap='share'>
     <image src='/icons/article/share.png'></image>
     <text>分享</text>
   </view>
+</view>

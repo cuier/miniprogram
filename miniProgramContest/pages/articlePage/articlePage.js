@@ -1,6 +1,6 @@
 import { Articlepage } from './articlePage-model.js'
 var articlepage = new Articlepage()
-
+import *as utils from '../../utils/umfUtils.js'
 
 const $swipertab = [
     { name: '精选', index: 0, isCurr: true, },
@@ -65,7 +65,7 @@ Page({
      * 用户点击右上角分享
      */
     onShareAppMessage: function () {
-
+      utils.shareApp()
     },
 
     /**
@@ -100,8 +100,9 @@ Page({
         var read = e.currentTarget.dataset.read;
         var title = e.currentTarget.dataset.title;
         var pic = e.currentTarget.dataset.pic;
+        let articleid = e.currentTarget.dataset.articleid
         wx.navigateTo({
-            url: './articleDetail/articleDetail?content='+content+"&tag="+tag+"&read="+read+"&title="+title+"&pic="+pic
+          url: './articleDetail/articleDetail?content=' + content + "&tag=" + tag + "&read=" + read + "&title=" + title + "&pic=" + pic + "&article_id=" + articleid
         })
     }
 })

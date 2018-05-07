@@ -1,6 +1,7 @@
 // pages/quizePage/quizePage.js
 import * as constants from '../../code/constants.js'
 import {$alertSheets} from '../../components/CompRouter.js'
+import *as utils from '../../utils/umfUtils.js'
 import {Base} from '../../utils/base.js'
 var base = new Base()
 Page({
@@ -30,13 +31,15 @@ Page({
     })
   },
 onShow:function(){
-  console.log(this.data.topicid)
+  wx.setNavigationBarTitle({
+    title: this.data.contentArr[this.data.curlevelid - this.data.currlowestlevelid].name,
+  })
 },
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+    utils.shareApp()
   },
   gotoQuize:function(e){
     //不在这做网络请求

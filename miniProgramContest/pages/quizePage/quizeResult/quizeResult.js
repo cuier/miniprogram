@@ -1,4 +1,5 @@
 // pages/quizePage/quizeResult/quizeResult.js
+import *as utils from '../../../utils/umfUtils.js'
 import { Quize } from './quizeResult-model.js'
 var quize = new Quize()
 var app=getApp()
@@ -20,7 +21,7 @@ Page({
       screenWidth: app.globalData.systemInfo.screenWidth,
       isSuccess: options.isSuccess,
       levelid: parseInt(options.levelid),
-      reviewArr: options.reviewArr?JSON.parse(options.reviewArr):[],
+      // reviewArr: options.reviewArr?JSON.parse(options.reviewArr):[],
       topicid:options.topicid
     })
     if (options.isSuccess == 1){
@@ -71,14 +72,14 @@ gotoChuanguan:function(){
 },
   gotoReview:function(){
     wx.redirectTo({
-      url: '../reviewQuize/reviewQuize?reviewArr=' + JSON.stringify(this.data.reviewArr),
+      url: '../reviewQuize/reviewQuize',
     })
   },
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+    utils.shareApp()
   }
 })
 

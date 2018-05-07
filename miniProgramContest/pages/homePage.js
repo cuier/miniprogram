@@ -1,4 +1,5 @@
 import { Base } from '../utils/base.js'
+import *as utils from '../utils/umfUtils.js'
 var base = new Base()
 const app = getApp()
 Page({
@@ -33,7 +34,8 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function (res) {
+    utils.shareApp()
   },
   //获取用户信息
   _getUserInfo(cb) {
