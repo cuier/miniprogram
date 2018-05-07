@@ -1,4 +1,7 @@
 import { Base } from '../../../utils/base.js'
+import { Sign } from './sign-model.js'
+var sign = new Sign()
+
 const sysWidth = wx.getSystemInfoSync().windowWidth
 const sysHight = wx.getSystemInfoSync().windowHeight
 
@@ -44,6 +47,10 @@ Page({
     wx.navigateBack({
       delta: 1
     })
+
+    var that = this;
+    sign.addMoney((res) => {
+    }, 100);
   }
 
  

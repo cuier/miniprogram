@@ -5,7 +5,7 @@
     <view class="info">
       <view class="nickname">{{userInfo.nickName}}</view>
       <view class="coin">
-        <image src="/icons/gold-coin.png"></image><text>1200</text>
+        <image src="/icons/gold-coin.png"></image><text> {{money}}</text>
       </view>
     </view>
     <!-- <view class="switch">切换到男生版</view> -->
@@ -19,12 +19,12 @@
   </view>
   <view class="bottom">
     <view class="subject">
-      <view class="num">0</view>
+      <view class="num">{{question_count}}</view>
       <view class="desc">题目收藏</view>
     </view>
     <view class="line"><image src="/icons/sLine.png" style="width:4px;height:30px;"/></view>
     <view class="article">
-      <view class="num">5</view>
+      <view class="num">{{article_count}}</view>
       <view class="desc">文章收藏</view>
     </view>
   </view>

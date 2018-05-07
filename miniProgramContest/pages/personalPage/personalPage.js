@@ -1,6 +1,6 @@
-// import network from '../../http/newNetwork.js'
-import { Base } from '../../utils/base.js'
-var base = new Base()
+import { Personalpage } from './personalPage-model.js'
+var personalpage = new Personalpage()
+
 const sysWidth = wx.getSystemInfoSync().windowWidth
 const sysHight = wx.getSystemInfoSync().windowHeight
 
@@ -12,6 +12,30 @@ Page({
     themeBgHieght: 80 / 350 * (sysWidth - 30), //主题高
     isSign: false, //是否签到
     isLogin: false, //是否登录
+    article_count: 0,
+    question_count: 0,
+    money: 0,
+  },
+
+  /**
+   * 页面加载时
+   */
+  onLoad: function (options) {
+      this.setData({
+          userInfo: JSON.parse(options.userInfo)
+      });
+
+      var that = this;
+      personalpage.getCount((res) => {
+          var question_count = res.question_count;
+          var article_count = res.article_count;
+          that.setData({
+              question_count: question_count,
+              article_count: article_count,
+          });
+      });
+
+      
   },
 
   /**
@@ -19,6 +43,14 @@ Page({
    */
   onShow: function(){
     let that = this;
+    personalpage.getMoney((res) => {
+        console.log(res);
+        var money = res.money;
+        that.setData({
+            money: money,
+        });
+    });
+    
     wx.authorize({
       scope: 'scope.userInfo',
       success() {
@@ -70,14 +102,7 @@ Page({
     })
   },
 
-  /**
-   * 页面加载时
-   */
-  onLoad:function(options){
-    this.setData({
-      userInfo: JSON.parse(options.userInfo) 
-    })
-  },
+  
 
   /**
    * 签到

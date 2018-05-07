@@ -12,7 +12,6 @@
     "pages/sotrePage/sotreDetail/sotreDetail",
     "pages/personalPage/personalPage",
     "pages/personalPage/sign/sign"
-    
   ],
   "window": {
     "backgroundTextStyle": "light",
