@@ -67,6 +67,10 @@ Page({
         topiclist:res.data.topiclist,
         user_topic_list: res.data.user_topic_list
       })
+      wx.setStorage({
+        key: 'topiclist',
+        data: res.data.topiclist,
+      })
     });
   },
 //获取等级名称

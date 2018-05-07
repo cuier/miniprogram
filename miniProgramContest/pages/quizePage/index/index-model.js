@@ -12,7 +12,7 @@ class Index extends Base {
     var allParams = {
       url: '/Question/list',
       type:'post',
-      data: { topicid: 1, levelid: 1 ,page:1,count:10},
+      data: { topicid: topicid, levelid: levelid ,page:1,count:10},
     };
     this.request(allParams, (res) => {
       cb && cb(res.data)

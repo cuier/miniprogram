@@ -1,4 +1,6 @@
 // pages/quizePage/quizeResult/quizeResult.js
+import { Quize } from './quizeResult-model.js'
+var quize = new Quize()
 var app=getApp()
 Page({
 
@@ -17,13 +19,17 @@ Page({
       // isSuccess:true,
       screenWidth: app.globalData.systemInfo.screenWidth,
       isSuccess: options.isSuccess,
-      levelid: options.levelid,
-      reviewArr: JSON.parse(options.reviewArr) ,
+      levelid: parseInt(options.levelid),
+      reviewArr: options.reviewArr?JSON.parse(options.reviewArr):[],
+      topicid:options.topicid
     })
-    if (options.isSuccess){
+    if (options.isSuccess == 1){
       this.setData({
-        levelName: getLevelName(this.data.levelid-1, options.gender, options.topicid)
+        levelid: parseInt(options.levelid) + 1,
+        levelName: getLevelName(this.data.levelid+1,options.topicid)
       })  
+      quize.addMoney(1000)
+      quize.postNewLevel(this.data.topicid, this.data.levelid)
     }
   },
 
@@ -40,7 +46,24 @@ Page({
   onShow: function () {
   
   },
-
+  goonChuanguan:function(){
+    let contentArr =[]
+    let topiclist = wx.getStorageSync('topiclist')
+    for (let item in topiclist) {
+      if (this.data.topicid == topiclist[item].topicid) {
+        contentArr = topiclist[item].level
+      }
+    }
+    var pages = getCurrentPages();
+    var currPage = pages[pages.length - 1];   //当前页面
+    var prevPage = pages[pages.length - 2];  //上一个页面
+    prevPage.setData({
+      curlevelid: this.data.levelid,
+    })
+    wx.navigateBack({
+      delta:1
+    })
+  },
 gotoChuanguan:function(){
   wx.redirectTo({
     url: '../index/index?topicid='+this.data.topicid+'&levelid='+this.data.levelid,
@@ -51,9 +74,6 @@ gotoChuanguan:function(){
       url: '../reviewQuize/reviewQuize?reviewArr=' + JSON.stringify(this.data.reviewArr),
     })
   },
-// share:function(){
-//   _ShareAppMessageReturnObject
-// }
   /**
    * 用户点击右上角分享
    */
@@ -62,15 +82,15 @@ gotoChuanguan:function(){
   }
 })
 
-function getLevelName(levelid,gender=2,topicid){
-    switch (topicid) {
-      case '0':
-        return constants.healthLevel[levelid].title;
-      case '1':
-        return gender == 1 ? constants.dadLevel[levelid].title : constants.mamiLevel[levelid].title
-      case '2':
-        return constants.slimLevel[levelid].title;
-      case '3':
-        return constants.chihuoLevel[levelid].title
+function getLevelName(levelid,topicid){
+  let topiclist = wx.getStorageSync('topiclist')
+  for(let item in topiclist){
+    if (topicid ==topiclist[item].topicid){
+      let level = topiclist[item].level
+      for(let it of level){
+        if(levelid==it.levelid)
+        return it.name
+      }
     }
+  }
   }

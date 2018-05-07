@@ -59,7 +59,7 @@ Page(Object.assign({
       })
       //闯关成功
       wx.redirectTo({
-        url: '../quizeResult/quizeResult?isSuccess=1?levelid=' + this.data.levelid + '&topicid=' + this.data.topicid + '&reviewArr=' + JSON.stringify(this.data.reviewArr),//闯关成功界面进行加一
+        url: '../quizeResult/quizeResult?isSuccess=1&levelid=' + this.data.levelid + '&topicid=' + this.data.topicid + '&reviewArr=' + JSON.stringify(this.data.reviewArr),//闯关成功界面进行加一
       })
     }
 
@@ -103,14 +103,26 @@ Page(Object.assign({
   },
 
   dealWrong(select) {
-    
+    this.pushDataToReview(this.data.postList[this.data.idx], select)
     this.setData({
       wrongNum: this.data.wrongNum + 1,
       stopInterval: true,
     })
 
-    if (this.data.wrongNum < 2) {
-      this.pushDataToReview(this.data.postList[this.data.idx], select)
+    if (this.data.wrongNum < 3) {
+      if (this.data.idx == this.data.postList.length - 1){
+        // this.pushDataToReview(this.data.postList[this.data.idx], select)
+        this.setData({
+          stopInterval: true,
+          rightNum: this.data.rightNum + 1
+        })
+        //闯关成功
+        wx.redirectTo({
+          url: '../quizeResult/quizeResult?isSuccess=1&levelid=' + this.data.levelid + '&topicid=' + this.data.topicid + '&reviewArr=' + JSON.stringify(this.data.reviewArr),//闯关成功界面进行加一
+        })
+        return
+      }
+      // this.pushDataToReview(this.data.postList[this.data.idx], select)
       setTimeout(() => {
         // this.stepInterval()
         this.setData({
@@ -122,15 +134,16 @@ Page(Object.assign({
         })
       }, 2000)
     } else {
-      this.pushDataToReview(this.data.postList[this.data.idx], select)
+      
       clearInterval(this.stepTimer)
       this.setData({
         isResult: true,
         stopInterval: true,
       })
+      // wx.setStorageSync('reviewArr', this.data.reviewArr)
       //闯关失败
       wx.redirectTo({
-        url: '../quizeResult/quizeResult?isSuccess=0&reviewArr=' + JSON.stringify(this.data.reviewArr),
+        url: '../quizeResult/quizeResult?isSuccess=0&reviewArr=' + JSON.stringify(this.data.reviewArr) + '&levelid=' + this.data.levelid + '&topicid=' + this.data.topicid,
       })
     }
 

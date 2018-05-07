@@ -18,18 +18,20 @@ Page({
   onLoad: function (options) {  
     // let contentArr = chooseSubject(options.topicid, options.gender)
     // options.levelid = 3
+    let contentArr = JSON.parse(options.contentArr)
     this.setData({
-      // topicid:options.topicid,
-      // levelid:options.levelid,
-      // gender:options.gender,
-      // contentArr: formatArr(contentArr, options.levelid)
-      contentArr: JSON.parse(options.contentArr),
-      curlevelid: options.curlevelid ? options.currlevelid:2,
-      topicid:options.topicid 
+      contentArr: contentArr,
+      curlevelid: options.currlevelid != 'undefined' ? parseInt(options.currlevelid) : parseInt(contentArr[0].levelid),
+      topicid:options.topicid,
+      currlowestlevelid: parseInt(contentArr[0].levelid)
     })
-    console.log(options.contentArr)
+    wx.setNavigationBarTitle({
+      title: contentArr[this.data.curlevelid-this.data.currlowestlevelid].name,
+    })
   },
-
+onShow:function(){
+  console.log(this.data.topicid)
+},
   /**
    * 用户点击右上角分享
    */
@@ -66,24 +68,3 @@ Page({
     })
   }
 })
-
-// function chooseSubject(id,gender){
-//   switch(id){
-//     case '0':
-//     return constants.healthLevel;
-//     case '1':
-//     return gender==1?constants.dadLevel: constants.mamiLevel
-//     case '2':
-//     return constants.slimLevel;
-//     case '3':
-//     return constants.chihuoLevel
-//   }
-// }
-
-// function formatArr(contentArr, levelid){
-//   for (let i = 1; i < levelid;i++){
-//     contentArr[i].locked = 0
-//   }
-
-//   return contentArr 
-// }
