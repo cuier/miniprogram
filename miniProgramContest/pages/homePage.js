@@ -112,6 +112,11 @@ Page({
             url: '/pages/sotrePage/sotrePage',
         })
     },
+    gotoAnjia:function(){
+      wx.navigateTo({
+        url: '/pages/anjia/anjia',
+      })
+    }
 })
 
 function getCurlevelid(topicid, levelist) {

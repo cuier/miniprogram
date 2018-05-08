@@ -36,7 +36,7 @@
     <view class='section2'>
       <view class='border section4 section4-1' bindtap='gotoStore'>{{topiclist[5].name}}
       <image src='/icons/money.png' style='width:120rpx;height:86rpx;margin-left:10rpx'></image></view>
-      <view class='border section4 section4-2' bindtap='goto'>{{topiclist[6].name}}</view>
+      <view class='border section4 section4-2' bindtap='gotoAnjia'>{{topiclist[6].name}}</view>
     </view>
   </view>
 </view>

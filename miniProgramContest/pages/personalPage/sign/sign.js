@@ -51,7 +51,7 @@ Page({
       url: 'user/addMoney',
       data: {num: 100},
     };
-    base.request(allParams, (res) => {
+    sign.request(allParams, (res) => {
       if(res.code == '200'){
         wx.showModal({
           content	: '签到成功',

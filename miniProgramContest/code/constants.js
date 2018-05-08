@@ -5,7 +5,7 @@
 //引入环境变量的设置
 import configCode from './configCode.js'
 //打开调试模式，生产需要关闭
-const DEBUG = true;
+const DEBUG = false;
 
 module.exports = Object.assign({
   debug:DEBUG,//是否为调试模式
