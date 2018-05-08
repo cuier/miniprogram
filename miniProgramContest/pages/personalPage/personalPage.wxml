@@ -37,7 +37,7 @@
 
 <!-- 主题 -->
 <view style="width:{{themeBgWidth}}px;padding:0 15px;">
-    <block wx:for="{{user_topic_list}}" wx:for-index="idx">
+    <block wx:for="{{user_topic_list}}" wx:for-index="idx" wx:key='usertopiclist'>
     <view class="theme" style="height:{{themeBgHieght}}px;margin-top:0;" bindtap='gotoQuiz' data-topicid="{{item.topic_id}}" data-levelid="{{item.level_id}}">
         <view class="li pl20">
             <view class="title">主题{{idx+1}}: {{item.topic_name}}</view>
@@ -48,7 +48,7 @@
         </view>
     </view>
     </block>
-    <block wx:for="{{remind_topic}}" wx:for-index="idx">
+    <block wx:for="{{remind_topic}}" wx:for-index="idx" wx:key='remindtopic'>
     <view class="theme" style="height:{{themeBgHieght}}px;margin-top:0;" bindtap='gotoQuiz' data-topicid="{{item.topic_id}}">
         <view class="li pl20">
             <view class="title">主题{{idx}}: {{item.topic_name}}</view>

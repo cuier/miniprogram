@@ -24,6 +24,7 @@
 
 .name {
   margin: 10rpx 40rpx !important;
+  white-space:nowrap;
 }
 
 .border {

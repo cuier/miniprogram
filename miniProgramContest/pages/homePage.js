@@ -22,6 +22,7 @@ Page({
             this.setData({
                 userInfo: data,
             });
+            
         });
         this.requestLevelName()
     },
@@ -49,6 +50,10 @@ Page({
     wx.getUserInfo({
       success: (res) => {
         typeof cb == "function" && cb(res.userInfo);
+        wx.setStorage({
+          key: 'userInfo',
+          data: res.userInfo,
+        })
         this._updateUserInfo(res.userInfo)
       },
       fail: (res) => {

@@ -40,7 +40,7 @@ Page({
         });
 
         var userInfo = wx.getStorageSync('userInfo');
-        var gender = userInfo.gender - 1;
+        var gender = userInfo?userInfo.gender - 1:1;
         personalpage.getInfoList((res) => {
             that.setData({
                 topiclist: res.topiclist,
@@ -72,6 +72,11 @@ Page({
                 that.setData({ isLogin: true })
                 wx.getUserInfo({
                     success: function (res) {
+                      var pages = getCurrentPages();
+                      var prevPage = pages[pages.length - 2];  //上一个页面
+                      prevPage.setData({
+                        userInfo: res.userInfo,
+                      })
                         that.setData({
                             userInfo: {
                                 nickName: res.userInfo.nickName,
