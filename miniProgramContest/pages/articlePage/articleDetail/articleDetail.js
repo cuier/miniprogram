@@ -69,7 +69,7 @@ Page({
     },
     collect: function (e) {
       let targetid = e.currentTarget.dataset.current
-      collect.collect(targetid, 0, !this.data.isCollect, (res) => {
+      collect.collect(targetid, 2, !this.data.isCollect, (res) => {
         this.setData({
           isCollect: !this.data.isCollect
         })
