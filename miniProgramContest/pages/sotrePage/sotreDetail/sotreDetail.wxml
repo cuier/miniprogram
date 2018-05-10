@@ -8,7 +8,7 @@
   <view class="coin">
     <text>￥{{price}}</text>
   </view>
-  <view wx:if="{{can_exchange == 0}}" class="desc">您尚未达到超人妈妈等级，无法免费兑换</view>
+  <view wx:if="{{can_exchange == 0}}" class="desc">您尚未达到{{max_level_name}}等级，无法免费兑换</view>
 </view>
 
 <view wx:if="{{can_exchange == 0}}" class="buy">
