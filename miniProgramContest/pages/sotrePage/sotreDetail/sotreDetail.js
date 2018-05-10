@@ -20,13 +20,15 @@ Page({
     let price = options.price;
     let can_exchange = options.can_exchange;
     let topciname = options.topciname;
+    let max_level_name = options.max_level_name;
     this.setData({
       goods_id: goods_id,
       name: name,
       pic: pic,
       price: price,
       topciname: topciname,
-      can_exchange: can_exchange
+      can_exchange: can_exchange,
+      max_level_name: max_level_name
     })
   },
 

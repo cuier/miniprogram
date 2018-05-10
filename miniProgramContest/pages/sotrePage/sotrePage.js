@@ -49,8 +49,10 @@ Page({
         var price = e.currentTarget.dataset.price;
         var can_exchange = e.currentTarget.dataset.can_exchange;
         var topciname = e.currentTarget.dataset.topciname;
+        var max_level_name = e.currentTarget.dataset.max_level_name;
+        console.log(max_level_name);
         wx.navigateTo({
-            url: '../sotrePage/sotreDetail/sotreDetail?goods_id=' + goods_id + "&name=" + name + "&pic=" + encodeURIComponent(pic) + "&price=" + price + "&can_exchange=" + can_exchange + "&topciname=" + topciname,
+            url: '../sotrePage/sotreDetail/sotreDetail?goods_id=' + goods_id + "&name=" + name + "&pic=" + encodeURIComponent(pic) + "&price=" + price + "&can_exchange=" + can_exchange + "&topciname=" + topciname + "&max_level_name=" + max_level_name,
         })
     }
 })
