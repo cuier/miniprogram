@@ -1,13 +1,12 @@
 {
   "pages": [
-    
     "pages/homePage",
+"pages/quizePage/reviewQuize/reviewQuize",
+    "pages/quizePage/quizeResult/quizeResult",
     "pages/articlePage/articleDetail/articleDetail",
     "pages/articlePage/articlePage",
-    "pages/quizePage/quizeResult/quizeResult",
     "pages/quizePage/index/index",
     "pages/quizePage/quizePage",
-    "pages/quizePage/reviewQuize/reviewQuize",
     "pages/debug/test",
     "pages/sotrePage/sotrePage",
     "pages/sotrePage/sotreDetail/sotreDetail",

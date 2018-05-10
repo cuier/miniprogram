@@ -62,8 +62,8 @@ Page({
     })
   },
   //更新用户信息到服务器
-  _updateUserInfo(res={}) {
-    var gender = res.gender?res.gender-1:1;
+  _updateUserInfo(ress={}) {
+    var gender = ress.gender?ress.gender-1:1;
     var allParams = {
       type: 'post',
       url: 'user/getInfoList',

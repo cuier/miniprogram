@@ -28,3 +28,5 @@
   <view bindtap='gotoChuanguan' class='reQuize' style='background-image:url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525231213904.jpg");'> 重新闯关</view>
   <view bindtap='gotoReview' class='reLook' style='background-image:url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525231213233.jpg")'>回顾本局</view>
 </view>
+
+ <canvas hidden='true'  canvas-id="shareImg" style="width:750px;height:1200px"></canvas> 

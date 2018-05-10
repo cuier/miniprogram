@@ -58,7 +58,7 @@ onShow:function(){
   },
   gameExplain:function(e){
     $alertSheets.showalertSheets({
-      gameExplain:'1.金币还可以在商城抵扣现金\n2.当获得超人妈妈等级和\n10000金币以后可在商城\n免费兑换如下礼物',
+      gameExplain:'1.金币还可以在商城抵扣现金\n2.当获得超人妈妈等级和\n10000金币以后可在商城\n免费兑换相应礼物',
       onConfirm: (e) => {
       },
        onCancel: (e) => {

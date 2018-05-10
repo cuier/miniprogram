@@ -1,4 +1,5 @@
  <import src='/commonView/footCollect/footCollect.wxml' />
+ <view >
 <view class='pagehead'>
   <block wx:for='{{classArr}}' wx:key='classArr'>
     <view bindtap='chooseQuestionNum' id='{{item.id}}' wx:if="{{reviewArr.length>index}}">
@@ -32,6 +33,7 @@
   </view>
 </view>
 <template is='footCollect' data='{{id:reviewArr[currId].question_id,isCollect:isCollect}}' />
+</view>
 <!-- <view class='pageFooter'>
   <view bindtap='collect' data-current='{{reviewArr[currId].question_id}}'>
     <image src='{{isCollect==1?"/icons/article/star-slected.png":"/icons/article/star.png"}}'></image>
