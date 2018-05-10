@@ -64,9 +64,9 @@ Page({
     /**
      * 用户点击右上角分享
      */
-    onShareAppMessage: function () {
-      utils.shareApp()
-    },
+    // onShareAppMessage: function () {
+    //   utils.shareApp()
+    // },
 
     /**
      * 顶部TAB切换

@@ -1,0 +1,12 @@
+<template name='footCollect'>
+  <view class='pageFooter'>
+    <button class='shareButton' bindtap='collect' data-current='{{id}}' style='z-index:100;margin-bottom:-2rpx'>
+      <image src='{{isCollect==1?"/icons/article/star-slected.png":"/icons/article/star.png"}}'></image>
+      <text>收藏</text>
+    </button>
+    <button class='shareButton' style='margin-left:-440rpx' open-type='share' >
+      <image src='/icons/article/share.png'></image>
+      <text>分享</text>
+    </button>
+  </view>
+</template>

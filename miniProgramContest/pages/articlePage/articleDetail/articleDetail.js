@@ -1,7 +1,9 @@
 // pages/articlePage/articleDetail/articleDetail.js
 import *as utils from '../../../utils/umfUtils.js'
+import *as cacheUtils from '../../../utils/model/cacheUtils.js'
 import {Collect} from '../../quizePage/reviewQuize/collect-model.js'
 var collect = new Collect()
+var cacheManager = null
 Page({
 
     /**
@@ -28,6 +30,14 @@ Page({
             pic: pic,
             article_id:options.article_id
         })
+        cacheManager = new cacheUtils.cacheManager()
+        cacheManager.init('health','article')
+        let cacheStorageData = cacheManager.getFunc()
+        if (cacheStorageData&&cacheStorageData[options.article_id]){
+          this.setData({
+            isCollect:1
+          })
+        }
     },
 
     /**
@@ -63,6 +73,7 @@ Page({
         this.setData({
           isCollect: !this.data.isCollect
         })
+        cacheManager.cacheFunc({ [this.data.article_id]: this.data.isCollect})
       })
 
     },

@@ -21,7 +21,7 @@ Page({
   onLoad: function (options) {
     let reviewArr = wx.getStorageSync('reviewArr')
     this.setData({
-      reviewArr: options.reviewArr ? JSON.parse(options.reviewArr) : reviewArr
+      reviewArr: reviewArr ? reviewArr:JSON.parse(options.reviewArr)
     })
     console.log(this.data.reviewArr)
   },
@@ -55,6 +55,10 @@ Page({
    * 
    */
   onShareAppMessage: function () {
-    utils.shareApp()  
+    // utils.shareApp()  
+    return {
+      title:"健康守护神",
+      path: "/pages/quizePage/reviewQuize/reviewQuize?reviewArr=" + JSON.stringify(this.data.reviewArr), 
+    }
   }
 })

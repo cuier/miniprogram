@@ -16,13 +16,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var userInfo = wx.getStorageSync('userInfo');
     this.setData({
-      // isSuccess:true,
+      isSuccess:true,
       screenWidth: app.globalData.systemInfo.screenWidth,
-      isSuccess: options.isSuccess,
+      // isSuccess: options.isSuccess,
       levelid: parseInt(options.levelid),
       // reviewArr: options.reviewArr?JSON.parse(options.reviewArr):[],
-      topicid:options.topicid
+      topicid:options.topicid,
+      gender:userInfo?userInfo.gender:2
     })
     if (options.isSuccess == 1){
       this.setData({

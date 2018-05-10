@@ -17,7 +17,7 @@ function cacheManager(){
     let app = getApp()
 
     //缓存维度  自定义
-    let funcKey = app.globalData.userData.agentId
+    let funcKey = 'health'
     this.key = funcKey
     this.func = func
     this.storage = {}

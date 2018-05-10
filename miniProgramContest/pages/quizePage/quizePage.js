@@ -38,9 +38,9 @@ onShow:function(){
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-    utils.shareApp()
-  },
+  // onShareAppMessage: function () {
+  //   utils.shareApp()
+  // },
   gotoQuize:function(e){
     //不在这做网络请求
     // let params = {

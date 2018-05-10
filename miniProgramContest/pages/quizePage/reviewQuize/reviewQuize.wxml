@@ -1,3 +1,4 @@
+ <import src='/commonView/footCollect/footCollect.wxml' />
 <view class='pagehead'>
   <block wx:for='{{classArr}}' wx:key='classArr'>
     <view bindtap='chooseQuestionNum' id='{{item.id}}' wx:if="{{reviewArr.length>index}}">
@@ -30,8 +31,8 @@
     <text>解释：\n{{reviewArr[currId].explain}}</text>
   </view>
 </view>
-
-<view class='pageFooter'>
+<template is='footCollect' data='{{id:reviewArr[currId].question_id,isCollect:isCollect}}' />
+<!-- <view class='pageFooter'>
   <view bindtap='collect' data-current='{{reviewArr[currId].question_id}}'>
     <image src='{{isCollect==1?"/icons/article/star-slected.png":"/icons/article/star.png"}}'></image>
     <text >收藏</text>
@@ -40,4 +41,4 @@
     <image src='/icons/article/share.png'></image>
     <text>分享</text>
   </view>
-</view>
+</view> -->

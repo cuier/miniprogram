@@ -10,7 +10,7 @@
       <image class='image-self' src='/icons/gold-coin.png'></image>
       <text>1000</text>
     </view>
-    <image style='height:200rpx;width:180rpx' src='/icons/woman.png'></image>
+    <image style='height:200rpx;width:{{gender==1?"140rpx":"180rpx"}}' src='{{gender==1?"/icons/man.png":"/icons/woman.png"}}'></image>
     <text style='margin-top:-30rpx;font-size:34rpx'>{{levelName}}</text>
     <text style='font-size:32rpx;text-align: center;padding-bottom:20rpx'>你还需要努力的学习更多健康知识，\n让我们一起加油</text>
 
@@ -19,7 +19,7 @@
   <view class='pageFooter'>
     <view bindtap='gotoReview' class='footer-self' style='background-image:url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525265865553.jpg");width: 210rpx;'>本局回顾</view>
     <button open-type='share' class='footer-self footer-share'>分享</button>
-    <view class='footer-self' style='background-image:url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525231213233.jpg");width: 180rpx;'>保存图片</view>
+    <view bindtap='saveImageToPhotosAlbum' class='footer-self' style='background-image:url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525231213233.jpg");width: 180rpx;'>保存图片</view>
   </view>
 
 </view>

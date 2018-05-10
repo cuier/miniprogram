@@ -77,11 +77,12 @@ Page({
                       prevPage.setData({
                         userInfo: res.userInfo,
                       })
+                      wx.setStorage({
+                        key: 'userInfo',
+                        data: res.userInfo,
+                      })
                         that.setData({
-                            userInfo: {
-                                nickName: res.userInfo.nickName,
-                                avatarUrl: res.userInfo.avatarUrl
-                            }
+                          userInfo: res.userInfo
                         })
                     }
                 })

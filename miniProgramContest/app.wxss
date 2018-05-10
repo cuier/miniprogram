@@ -181,3 +181,17 @@ ex.
   height: 60rpx;
   width: 60rpx;
 }
+
+.shareButton{
+  background-color: white;
+  margin-bottom: -2rpx;
+  margin-left: -30rpx; 
+  height: 60rpx;
+  width:200rpx;
+  display: flex;
+  /* justify-content: center */
+  align-items: center;
+}
+.shareButton::after{
+border: none;
+}

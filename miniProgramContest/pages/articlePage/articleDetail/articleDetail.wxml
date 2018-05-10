@@ -1,3 +1,4 @@
+ <import src='/commonView/footCollect/footCollect.wxml' />
 <view class='container'>
   <view class='content'>
     <image src='{{pic}}'></image>
@@ -11,7 +12,8 @@
     <rich-text adjust-position> {{content}}</rich-text>
   </view>
 </view>
-<view class='pageFooter'>
+<template is='footCollect' data='{{id:article_id,isCollect:isCollect}}' />
+<!-- <view class='pageFooter'>
   <view bindtap='collect' data-current='{{article_id}}'>
     <image src='{{isCollect==1?"/icons/article/star-slected.png":"/icons/article/star.png"}}'></image>
     <text>收藏</text>
@@ -20,4 +22,4 @@
     <image src='/icons/article/share.png'></image>
     <text>分享</text>
   </view>
-</view>
+</view> -->
