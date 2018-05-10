@@ -41,7 +41,7 @@
     <view class="theme" style="height:{{themeBgHieght}}px;margin-top:0;" bindtap='gotoQuiz' data-topicid="{{item.topic_id}}" data-levelid="{{item.level_id}}">
         <view class="li pl20">
             <view class="title">主题{{idx+1}}: {{item.topic_name}}</view>
-            <view class="grade">等级：暂无</view>
+            <view class="grade">等级：{{item.level_name}}</view>
         </view>
         <view class="challenge pr20">
             <view>去查看</view>
