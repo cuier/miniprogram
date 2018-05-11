@@ -45,16 +45,17 @@ page{
 }
 .goonQuize{
   width: 560rpx;
-  height: 130rpx;
+  height: 150rpx;
   margin-top: 10rpx;
   display: flex;
   justify-content: center;
   align-items: center;
   background-repeat: no-repeat;
+  background-size: contain;
 }
 .reQuize {
   width: 560rpx;
-  height: 130rpx;
+  height: 150rpx;
   margin-top: 700rpx;
   display: flex;
   justify-content: center;

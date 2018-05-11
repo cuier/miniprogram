@@ -74,11 +74,15 @@ Page({
     wx.showToast({
       title: '绘制中，请稍后',
       icon: 'loading',
-      duration: 4000,
+      duration: 9000,
     })
-    setTimeout(() => {
-    this.drawImage(1)
-    }, 5000)
+    for(let i=0;i<2;i++){
+      this.drawImage(i)
+      setTimeout(() => {
+        this.drawImage(i+1)
+      }, 10000)
+    }
+    
   },
 
   drawImage(times) {
@@ -92,7 +96,7 @@ Page({
       canvasId: 'shareImg',
       success: (res) => {
         console.log(res.tempFilePath);
-        if (times == 1) {
+        if (times == 2) {
           this.save(res.tempFilePath)
         }
       },
@@ -150,13 +154,10 @@ Page({
       ctx.fillText('恭喜晋升', 750 / 2, 300)         //内容不会自己换行 需手动换行
       ctx.setFillStyle('red')
       ctx.fillText(this.data.levelName, 750 / 2, 380)         //  内容
+      // ctx.fillText('超人妈妈', 750 / 2, 380)  
       /* 绘制 */
       ctx.stroke()
       ctx.draw()
-
-      setTimeout(() => {
-        this.drawImage(0)
-      }, 3000)
     })
   },
   /**

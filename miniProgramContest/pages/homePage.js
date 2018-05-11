@@ -32,7 +32,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this._updateUserInfo()
+    this._updateUserInfo(this.data.userInfo)
+    this.requestLevelName()
   },
   /**
    * 用户点击右上角分享

@@ -1,8 +1,9 @@
 {
   "pages": [
     "pages/homePage",
-"pages/quizePage/reviewQuize/reviewQuize",
     "pages/quizePage/quizeResult/quizeResult",
+    "pages/anjia/anjia",
+    "pages/quizePage/reviewQuize/reviewQuize",
     "pages/articlePage/articleDetail/articleDetail",
     "pages/articlePage/articlePage",
     "pages/quizePage/index/index",
@@ -11,8 +12,7 @@
     "pages/sotrePage/sotrePage",
     "pages/sotrePage/sotreDetail/sotreDetail",
     "pages/personalPage/personalPage",
-    "pages/personalPage/sign/sign",
-    "pages/anjia/anjia"
+    "pages/personalPage/sign/sign"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -8,9 +8,9 @@
 }
 
 .image-user {
-  height: 160rpx;
-  width: 160rpx;
-  border-radius: 160rpx;
+  height: 64px;
+  width: 64px;
+  border-radius: 50px;
 }
 
 .my-header text {

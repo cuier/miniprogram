@@ -56,9 +56,11 @@ Page({
    */
   onShareAppMessage: function () {
     // utils.shareApp()  
+    let reviewArr = []
+    reviewArr.push(this.data.reviewArr[this.data.currId])
     return {
       title:"健康守护神",
-      path: "/pages/quizePage/reviewQuize/reviewQuize?reviewArr=" + JSON.stringify(this.data.reviewArr), 
+      path: "/pages/quizePage/reviewQuize/reviewQuize?reviewArr=" + JSON.stringify(reviewArr), 
     }
   }
 })

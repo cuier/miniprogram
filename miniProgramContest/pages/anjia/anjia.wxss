@@ -1,1 +1,22 @@
 /* pages/anjia/anjia.wxss */
+
+.container image {
+  /* margin: 20rpx 10rpx */
+  height: 318rpx;
+  width: 100%;
+}
+
+.container text {
+  padding: 20rpx;
+}
+
+.content {
+  /* font-family: PingFangSC-Regular; */
+  font-size: 16px;
+  color: #4a4a4a;
+  /* letter-spacing: 0.03px; */
+  /* line-height: 24px; */
+  margin:20rpx;
+   text-indent:-20rpx; 
+    text-align: left;  
+}
