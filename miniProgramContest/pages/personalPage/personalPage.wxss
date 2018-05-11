@@ -110,3 +110,12 @@
   border-radius:10px;
   line-height: 20px;
 }
+.headimg {
+  height: 64px;
+  width: 64px;
+  border-radius: 50px;
+  object-fit: cover;
+  display: block;
+  float: left;
+  overflow: hidden;
+}

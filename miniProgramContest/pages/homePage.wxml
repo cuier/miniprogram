@@ -1,8 +1,10 @@
 <view class='container' >
   <view class="my-header" bindtap='gotoMyPage'>
-    <image class='image-user' src="{{userInfo.avatarUrl}}"></image>
+    <!-- <image class='image-user' src="{{userInfo.avatarUrl}}"></image> -->
+    <open-data type="userAvatarUrl" class='headimg'  lang="en"></open-data>
     <view>
-      <text class="name">{{userInfo.nickName}}</text>
+      <!-- <text class="name">{{userInfo.nickName}}</text> -->
+      <open-data class='name' type="userNickName" lang="zh_CN"></open-data>
       <text class="name">等级:{{levelName}}</text>
     </view>
     <image style='margin-bottom: 60rpx' class='image-self' src='/icons/gold-coin.png'></image>

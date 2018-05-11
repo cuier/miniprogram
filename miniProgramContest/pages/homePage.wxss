@@ -7,10 +7,14 @@
   font-size: 34rpx;
 }
 
-.image-user {
+.headimg {
   height: 64px;
   width: 64px;
   border-radius: 50px;
+  object-fit: cover;
+  display: block;
+  float: left;
+  overflow: hidden;
 }
 
 .my-header text {
@@ -24,7 +28,7 @@
 
 .name {
   margin: 10rpx 40rpx !important;
-  white-space:nowrap;
+  white-space: nowrap;
 }
 
 .border {
@@ -46,7 +50,7 @@
 .section1 {
   margin-top: 30rpx;
   height: 252rpx;
-  background-color: #FBEFE0;
+  background-color: #fbefe0;
   color: black !important;
   background-image: url("http://weiyinyue.music.sina.com.cn/movie_still/176848_1525182309799.jpg");
 }
@@ -63,38 +67,45 @@
   width: 320rpx;
   height: 352rpx;
   margin-top: 0rpx !important;
-  background-color: #FCD93C;
+  background-color: #fcd93c;
   color: black !important;
 }
-.section2-2{
+
+.section2-2 {
   display: flex;
   flex-direction: column;
   margin-left: 30rpx;
 }
-.section2-2-1{
+
+.section2-2-1 {
   height: 150rpx;
   width: 316rpx;
   margin-top: 10rpx;
   margin-bottom: 10rpx;
-  background-color: #FC9A3C
+  background-color: #fc9a3c;
 }
 
-.section3{
+.section3 {
   display: flex;
   align-items: flex-end;
   align-content: flex-end;
   flex: 1;
   margin-top: 30rpx;
   height: 144rpx;
-  background-color: #EC4571;
+  background-color: #ec4571;
 }
-.section4{
+
+.section4 {
   height: 144rpx;
   width: 316rpx;
   margin-bottom: 40rpx;
 }
-.section4-1{background-color: #B748F1}
-.section4-2{
-  background-color: #7541D5;
+
+.section4-1 {
+  background-color: #b748f1;
+}
+
+.section4-2 {
+  background-color: #7541d5;
   margin-left: 30rpx;
 }

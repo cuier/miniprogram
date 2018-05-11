@@ -25,9 +25,9 @@ Page({
      * 页面加载时
      */
     onLoad: function (options) {
-        this.setData({
-            userInfo: JSON.parse(options.userInfo)
-        });
+        // this.setData({
+        //     userInfo: JSON.parse(options.userInfo)
+        // });
 
         var that = this;
         personalpage.getCount((res) => {
@@ -66,61 +66,61 @@ Page({
             });
         });
 
-        wx.authorize({
-            scope: 'scope.userInfo',
-            success() {
-                that.setData({ isLogin: true })
-                wx.getUserInfo({
-                    success: function (res) {
-                      var pages = getCurrentPages();
-                      var prevPage = pages[pages.length - 2];  //上一个页面
-                      prevPage.setData({
-                        userInfo: res.userInfo,
-                      })
-                      wx.setStorage({
-                        key: 'userInfo',
-                        data: res.userInfo,
-                      })
-                        that.setData({
-                          userInfo: res.userInfo
-                        })
-                    }
-                })
-                var signTime = wx.getStorageSync("signTime");
-                if (signTime == "") {  //为空，则显示签到
-                    that.setData({
-                        isSign: true
-                    })
-                } else {
-                    //当前日期
-                    const date = new Date();
-                    const cur_year = date.getFullYear();
-                    const cur_month = date.getMonth() + 1;
-                    const cur_day = date.getDate();
-                    var date_str = cur_year + '-' + (cur_month < 10 ? '0' + cur_month : cur_month) + '-' + (cur_day < 10 ? '0' + cur_day : cur_day);
-                    if (signTime == date_str) {  //日期相等，则显示已签到
-                        that.setData({
-                            isSign: false
-                        })
-                    } else {
-                        that.setData({
-                            isSign: true
-                        })
-                    }
-                }
-            },
-            fail() {
-                wx.showModal({
-                    title: '授权提示',
-                    content: '您未授权登录小程序，将无法使用部分功能，请点击确定按钮重新授权登录',
-                    success: function (res) {
-                        if (res.confirm) {
-                            wx.openSetting({});
-                        }
-                    }
-                })
-            }
-        })
+        // wx.authorize({
+        //     scope: 'scope.userInfo',
+        //     success() {
+        //         that.setData({ isLogin: true })
+        //         wx.getUserInfo({
+        //             success: function (res) {
+        //               var pages = getCurrentPages();
+        //               var prevPage = pages[pages.length - 2];  //上一个页面
+        //               prevPage.setData({
+        //                 userInfo: res.userInfo,
+        //               })
+        //               wx.setStorage({
+        //                 key: 'userInfo',
+        //                 data: res.userInfo,
+        //               })
+        //                 that.setData({
+        //                   userInfo: res.userInfo
+        //                 })
+        //             }
+        //         })
+        //         var signTime = wx.getStorageSync("signTime");
+        //         if (signTime == "") {  //为空，则显示签到
+        //             that.setData({
+        //                 isSign: true
+        //             })
+        //         } else {
+        //             //当前日期
+        //             const date = new Date();
+        //             const cur_year = date.getFullYear();
+        //             const cur_month = date.getMonth() + 1;
+        //             const cur_day = date.getDate();
+        //             var date_str = cur_year + '-' + (cur_month < 10 ? '0' + cur_month : cur_month) + '-' + (cur_day < 10 ? '0' + cur_day : cur_day);
+        //             if (signTime == date_str) {  //日期相等，则显示已签到
+        //                 that.setData({
+        //                     isSign: false
+        //                 })
+        //             } else {
+        //                 that.setData({
+        //                     isSign: true
+        //                 })
+        //             }
+        //         }
+        //     },
+        //     fail() {
+        //         wx.showModal({
+        //             title: '授权提示',
+        //             content: '您未授权登录小程序，将无法使用部分功能，请点击确定按钮重新授权登录',
+        //             success: function (res) {
+        //                 if (res.confirm) {
+        //                     wx.openSetting({});
+        //                 }
+        //             }
+        //         })
+        //     }
+        // })
     },
 
 
