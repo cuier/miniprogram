@@ -15,8 +15,8 @@
         </view>
         <!-- <view class="switch">切换到男生版</view> -->
         <!-- <block wx:if="{{isLogin}}"> -->
-            <view class="sign" bindtap="sign" hidden="{{!isSign}}">签到</view>
-            <view class="sign" hidden="{{isSign}}">已签到</view>
+            <!-- <view class="sign" bindtap="sign" hidden="{{!isSign}}">签到</view> -->
+            <!-- <view class="sign" hidden="{{isSign}}">已签到</view> -->
         <!-- </block> -->
         <!-- <block wx:else>
             <view class="sign" bindtap="onLogin">登录</view>

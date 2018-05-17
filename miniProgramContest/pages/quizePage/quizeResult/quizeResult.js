@@ -76,7 +76,7 @@ Page({
       icon: 'loading',
       duration: 9000,
     })
-    for(let i=0;i<2;i++){
+    for(let i=0;i<3;i++){
       this.drawImage(i)
       setTimeout(() => {
         this.drawImage(i+1)
@@ -96,7 +96,7 @@ Page({
       canvasId: 'shareImg',
       success: (res) => {
         console.log(res.tempFilePath);
-        if (times == 2) {
+        if (times == 3) {
           this.save(res.tempFilePath)
         }
       },
